@@ -7,7 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Header from './components/Header/Header.jsx';
+import Header from './components/Header/index.jsx';
 import Footer from './components/Footer/Footer.jsx'
 import { StoreProvider } from './utils/GlobalState';
 
