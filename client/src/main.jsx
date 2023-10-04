@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
+import './styles/index.css'
 import Home from './pages/Home.jsx'
-import Login from './components/Login/index.jsx'
+import Login from './components/Login&Signup/index.jsx'
 import Error from './pages/Error.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render([
