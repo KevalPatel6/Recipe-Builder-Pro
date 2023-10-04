@@ -25,13 +25,13 @@ const Profile = () => {
             <div id="create-recipe">
                 <Link to={`/profile/${profileId}/createrecipe`}>
                 <img id='create' src="" alt=""/>
-                <h1 class="recipe-header">Create new Recipe</h1>
+                <h1 className="recipe-header">Create new Recipe</h1>
                 </Link>
             </div>
             <div id="saved-recipes">
                 <Link to={`/profile/${profileId}/savedrecipes`}>
                 <img id='save' src="" alt=""/>
-                <h1 class="recipe-header">Saved Recipes</h1>
+                <h1 className="recipe-header">Saved Recipes</h1>
                 </Link>
             </div>
         </div>
