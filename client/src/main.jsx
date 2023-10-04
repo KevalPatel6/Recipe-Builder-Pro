@@ -24,6 +24,14 @@ ReactDOM.createRoot(document.getElementById('root')).render([
       {
         path: '/profile/:profileId',
         element: <Profile/>
+      },
+      {
+        path: '/profile/:profileId/savedrecipes',
+        element: <SavedRecipe/>
+      },
+      {
+        path: '/profile/:profileId/createrecipe',
+        element: <CreateRecipe/>
       }
     ]
   }
