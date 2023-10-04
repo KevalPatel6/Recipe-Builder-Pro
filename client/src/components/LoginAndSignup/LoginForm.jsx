@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 
@@ -10,6 +11,7 @@ const LoginForm = () => {
     //FormState is the values the user is inputing into the Login Form//
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error }] = useMutation(LOGIN_USER);
+    const navigate = useNavigate()
 
     //Handling changes to the form//
     const handleChange = (event) => {
@@ -31,6 +33,9 @@ const LoginForm = () => {
 
             //Login with the token associated with the email/password combo
             Auth.login(data.login.token)
+            console.log(data.login)
+            // navigate(`/profile/${Auth.loggedIn()}`)
+            //Find what that returns and get the id from there//
 
         } catch (err) {
             console.error(err)
