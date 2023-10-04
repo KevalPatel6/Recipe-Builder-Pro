@@ -9,7 +9,7 @@ import Auth from '../../utils/auth';
 const LoginForm = () => {
     //FormState is the values the user is inputing into the Login Form//
     const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
+    const [login, { error }] = useMutation(LOGIN_USER);
 
     //Handling changes to the form//
     const handleChange = (event) => {
@@ -21,7 +21,7 @@ const LoginForm = () => {
         })
     }
 
-    //Checking credentials//
+    //Checking credentials and logging in//
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -29,6 +29,7 @@ const LoginForm = () => {
                 variables: { ...formState }
             })
 
+            //Login with the token associated with the email/password combo
             Auth.login(data.login.token)
 
         } catch (err) {
@@ -43,7 +44,7 @@ const LoginForm = () => {
 
     return (
         <>
-            {/* Form */}
+            {/* Login Form */}
             <div id='form-container'>
                 <form
                     onSubmit={handleFormSubmit}
@@ -74,6 +75,12 @@ const LoginForm = () => {
                         Submit
                     </button>
                 </form>
+                 {/* If an error occurs, show the error message */}
+                 {error &&
+                    <div id='error-message'>
+                        {error.message}
+                    </div>
+                }
             </div>
         </>
     )

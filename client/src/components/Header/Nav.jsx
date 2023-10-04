@@ -9,7 +9,7 @@ function Nav() {
                     <li>Home</li>
                     </Link>
                     <Link to>
-                    <li to={'/login-signup'}>Login</li>
+                    <li to={'/loginAndSignup'}>Login</li>
                     </Link>
                 </ul>
             </nav>
