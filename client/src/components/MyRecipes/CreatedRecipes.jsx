@@ -6,7 +6,7 @@ const CreatedRecipe = ({recipes}) => {
 
     return (
         <>
-    {/*Need to map over the users recipes */}
+    {/*Need to map over the users created recipes */}
         <div className="recipe-card">
             {/* <!-- Recipe Image --> */}
             <div id="image-container">
