@@ -1,0 +1,70 @@
+
+.header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+}
+
+/* Header */
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/cooking-rotated.jpg'); /* Set your desired background image */
+    background-size: cover;
+    /* transform: rotate(180deg); Rotate the background image by 180 degrees */
+}
+
+/* ingredient cards */
+h1{
+    color: white;
+}
+
+#searcContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#ingredientList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ingredient-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+.ingredient-card span {
+    margin-right: 5px;
+}
+
+.remove-button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
