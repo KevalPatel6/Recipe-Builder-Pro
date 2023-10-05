@@ -7,28 +7,27 @@ function Nav() {
             <nav>
                 <ul>
                     <Link to={'/'}>
-                    <li>Home</li>
+                        <li>Home</li>
                     </Link>
                     <div>
-        {/*If logged in, get profile of the user and display that. If not, show the Login button */}
-                    {Auth.loggedIn() ? (
-                        <>
-                         <Link id="username" to="/me">
-                    {Auth.getProfile().authenticatedPerson.username}
-                       </Link>
-                        </>)
-                        :
-                        (<>
-                    <Link to>
-                    <li to={'/login-signup'}>Login</li>
-                    </Link> 
-                        </>)
-                    }
+                        {/*If logged in, get profile of the user and display that. If not, show the Login button */}
+                        {Auth.loggedIn() ? (
+                            <>
+                                <Link id="username" to="/me">
+                                    {Auth.getProfile().authenticatedPerson.username}
+                                </Link>
+                            </>)
+                            :
+                            (<>
+                                <Link to>
+                                    <li to={'/loginAndSignup'}>Login</li>
+                                </Link>
+                            </>
+                            )}
                     </div>
                 </ul>
             </nav>
         </div>
     )
 }
-
 export default Nav;

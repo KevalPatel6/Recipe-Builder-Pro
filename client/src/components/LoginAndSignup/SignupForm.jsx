@@ -15,7 +15,7 @@ const SignUpForm = () => {
             password: ''
         });
 
-    const [addUser, { error, data }] = useMutation(ADD_USER);
+    const [addUser, { error }] = useMutation(ADD_USER);
 
 
     //Update the state based on form input//
@@ -35,6 +35,7 @@ const SignUpForm = () => {
                 variables: { ...userFormData }
             })
 
+            //Login with created token after the user signs up//
             Auth.login(data.addUser.token)
 
         } catch (err) {
@@ -45,7 +46,7 @@ const SignUpForm = () => {
 
     return (
         <>
-            {/* Form */}
+            {/* Signup Form */}
             <div id='form-container'>
                 <form onSubmit={handleFormSubmit}>
                     <input
