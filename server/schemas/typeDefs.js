@@ -54,6 +54,7 @@ const typeDefs = `
     getIngredients( name: String, group: String): [Ingredient]
     getRecipe(recipeId: ID!): Recipe
 
+    getAllRecipes: [Recipe]
     getRecipeGroup(group: String!): [Recipe]
     getIngredientGroup(group: String!): [Ingredient]
 

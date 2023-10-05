@@ -5,12 +5,11 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             console.log(context.user)
-            let result = await User.findOne({ _id: context.user._id }); //populate recipes??
+            let result = await User.findOne({ _id: context.user._id }); 
             console.log(result)
             return result
         },
 
-        // find by username or find by id??
         getProfile: async (parent, { username }) => {
             return User.findOne({ username });
         },
@@ -22,11 +21,10 @@ const resolvers = {
         },
         getIngredient: async (parent, { ingredientId }, context) => {
             console.log(ingredientId)
-            return Ingredient.findOne({ _id: ingredientId }); // sort or filter here??
+            return Ingredient.findOne({ _id: ingredientId }); 
         },
         getIngredients: async (parent, args) => {
-            // console.log(name, group)
-            return Ingredient.find({}); // sort or filter here??
+            return Ingredient.find({}); 
         },
         getRecipe: async (parent, { recipeId }) => {
             console.log(recipeId)
@@ -35,34 +33,28 @@ const resolvers = {
             return result
         },
 
+        getAllRecipes: async (parent, args, context) => {
+            return Recipe.find({});
+        },
+
 
         getRecipeGroup: async (parent, { group }) => {
-            // console.log(recipeId)
             return Recipe.find({ group: group });
         },
         getIngredientGroup: async (parent, { group }) => {
-            // console.log(recipeId)
             return Ingredient.find({ group: group });
         },
 
 
         getSavedRecipes: async (parent, args, context) => {
-            // console.log(recipeId)
             let result = await User.findOne({ _id: context.user._id }).populate('savedRecipes');
-            console.log(result)
-
             return result
         },
 
         getCreatedRecipes: async (parent, { recipeId }, context) => {
-            console.log(recipeId)
             let result = await User.findOne({ _id: context.user._id }).populate('createdRecipes');
-            console.log( result)
             return result
         },
-
-
-
     },
 
 
@@ -74,9 +66,7 @@ const resolvers = {
         },
 
         login: async (parent, { email, password }) => {
-            console.log(email, password)
             const user = await User.findOne({ email })
-            console.log(user)
             if (!user) {
                 throw AuthenticationError;
             }
@@ -103,7 +93,6 @@ const resolvers = {
 
         saveRecipes: async (parent, { recipeId }, context) => {
             if (context.user) {
-                console.log(typeof recipeId)
                 let result = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     {
@@ -119,7 +108,6 @@ const resolvers = {
                         runValidators: true,
                     }
                 ).populate("savedRecipes");
-                console.log(result)
                 return result
             }
             throw AuthenticationError;
@@ -140,25 +128,17 @@ const resolvers = {
 
                 });
             
-
-
                 const updatedUser = await User.findOneAndUpdate(
                  
                     { _id: context.user._id },
                     {
                         $addToSet: {createdRecipes: newRecipe._id  },
                     },
-
                     {
                         new: true,
                         runValidators: true,
                     }
                 ).populate("savedRecipes");
-
-                console.log(updatedUser)
-                // on the logged in user update a property of created recipes add to set
-                // context.user.recipeList.push(newRecipe);
-                // await context.user.save();
 
                 return newRecipe;
             }
@@ -183,7 +163,6 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-
 
         removeRecipe: async (parent, { recipeId }, context) => {
 
