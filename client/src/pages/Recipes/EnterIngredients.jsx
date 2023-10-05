@@ -34,8 +34,12 @@ function Pantry() {
             <div id="searchContainer" class="container">
                 <div>
                     <h1>Search for Ingredients</h1>
-                    <input type="text" id="ingredientInput" placeholder="Enter ingredient" />
-                    <button onclick= {handleClick({ADD_INGREDIENT_TO_USER})} >Add</button>
+                    <input type="text" id="ingredientInput" placeholder="Enter ingredient" 
+                    value={ingredient} 
+                    onChange={(event) => setIngredient(event.target.value)}/> 
+                    
+                    <button onclick= {handleClick} >Add</button>
+                    <button>Choose Type??</button> {/*  link to ChooseType on click */}
                 </div>
 
             </div>
