@@ -5,11 +5,11 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             console.log(context.user)
-            let result = await  User.findOne({ _id: context.user._id }); //populate recipes??
+            let result = await User.findOne({ _id: context.user._id }); //populate recipes??
             console.log(result)
-           return result
+            return result
         },
-        
+
         // find by username or find by id??
         getProfile: async (parent, { username }) => {
             return User.findOne({ username });
@@ -45,38 +45,19 @@ const resolvers = {
             return Ingredient.find({ group: group });
         },
 
-        // getSavedRecipes: async (parent,  {userid}, context ) => {
-        //     console.log(userId)
-        //     const params = userid ? { userid } : {};
-        //     let result = await Recipe.find(params).sort({ recipeId });
-        //     console.log(result)
-        //     return result
-        //   },
 
-        // getSavedRecipes: async (parent, { userId }) => {
-        //     console.log(userId)
-        //       const user = await User.findById(userId);
-        //       if (!user) {
-        //         throw new Error("User not found");
-        //       }
-        //       const recipeIds = user.savedRecipes;
-        //       const recipes = await Recipe.find({ _id: { $in: [recipeIds] } });
-        //   console.log(recipes)
-        //       return [recipes];
-           
-        //   },
-          
-        getSavedRecipes: async (parent, {recipeId}) => {
-            console.log(recipeId)
-            let result = await User.find({ _id: recipeId });
+        getSavedRecipes: async (parent, args, context) => {
+            // console.log(recipeId)
+            let result = await User.findOne({ _id: context.user._id }).populate('savedRecipes');
             console.log(result)
+
             return result
         },
-        
-        getCreatedRecipes: async (parent, {recipeId}) => {
+
+        getCreatedRecipes: async (parent, { recipeId }, context) => {
             console.log(recipeId)
-            let result = await Recipe.find({ recipeId }); //byuserid
-            console.log(result)
+            let result = await User.findOne({ _id: context.user._id }).populate('createdRecipes');
+            console.log( result)
             return result
         },
 
@@ -127,19 +108,19 @@ const resolvers = {
                     { _id: context.user._id },
                     {
                         $addToSet: {
-                            savedRecipes: 
+                            savedRecipes:
                                 recipeId
-                            
+
                         },
                     },
-                  
+
                     {
                         new: true,
                         runValidators: true,
                     }
-                    ).populate("savedRecipes");
-             console.log(result)
-             return result       
+                ).populate("savedRecipes");
+                console.log(result)
+                return result
             }
             throw AuthenticationError;
         },
@@ -158,6 +139,24 @@ const resolvers = {
                     group
 
                 });
+            
+
+
+                const updatedUser = await User.findOneAndUpdate(
+                 
+                    { _id: context.user._id },
+                    {
+                        $addToSet: {createdRecipes: newRecipe._id  },
+                    },
+
+                    {
+                        new: true,
+                        runValidators: true,
+                    }
+                ).populate("savedRecipes");
+
+                console.log(updatedUser)
+                // on the logged in user update a property of created recipes add to set
                 // context.user.recipeList.push(newRecipe);
                 // await context.user.save();
 
