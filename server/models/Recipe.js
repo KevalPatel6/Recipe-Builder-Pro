@@ -5,13 +5,13 @@ const recipeSchema = new Schema({
 
     title: {
         type: String,
-        required: true,
+        
         unique: true,
         trim: true,
       },
     description: {
         type: String,
-        required: true,
+        
         trim: true,
       },
     ingredients: [
@@ -22,17 +22,16 @@ const recipeSchema = new Schema({
     ],
     instructions: {
         type: String,
-        required: true,
-        trim: true,
+        
       },
     servings: {
         type: String,
-        required: true,
+      
         trim: true,
       },
     totalTime: {
         type: String,
-        required: true,
+       
         trim: true,
       },
     imageUrl: {
