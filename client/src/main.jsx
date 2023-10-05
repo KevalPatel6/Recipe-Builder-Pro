@@ -6,6 +6,8 @@ import Home from './pages/Home.jsx'
 import Login from './components/LoginAndSignup/index.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
+import MyRecipes from './pages/MyRecipes.jsx'
+import CreateRecipe from './components/MyRecipes/CreatedRecipes.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render([
   {
@@ -26,8 +28,8 @@ ReactDOM.createRoot(document.getElementById('root')).render([
         element: <Profile/>
       },
       {
-        path: '/profile/:profileId/savedrecipes',
-        element: <SavedRecipe/>
+        path: '/profile/:profileId/myrecipes',
+        element: <MyRecipes/>
       },
       {
         path: '/profile/:profileId/createrecipe',
