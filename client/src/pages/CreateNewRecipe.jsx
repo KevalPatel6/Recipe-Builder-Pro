@@ -1,10 +1,27 @@
 import AddIngredients from '../components/CreateNewRecipe/AddIngredients'
 import ImageUploader from '../components/CreateNewRecipe/ImageUploader'
 import Instructions from '../components/CreateNewRecipe/Instructions'
+import { useState } from 'react'
 
 import '../styles/CreateRecipe.css'
 
-const CreateNewRecipe = () => {
+function CreateNewRecipe()  {
+    const [formData, setFormData] = useState({
+        title: '',
+        description: '',
+        ingredients: '',
+        instructions: '',
+        servings: '',
+        totalTime: '',
+        group: ''
+    })
+
+    const createRecipe = ()=>{
+        setFormData
+
+
+    }
+
 
 
     return (
@@ -20,7 +37,8 @@ const CreateNewRecipe = () => {
                     {/* <!-- Need to add value for the input--> */}
                     <input title="Input a Name for Your Recipe" autocomplete="on" maxlength="64" type="text"
                         pattern="[A-Za-z0-9\s\-]{4,128}" name="recipeName" placeholder="Enter Recipe Name" required
-                        id="recipeName" />
+                        id="recipeName" value={formData.title}
+                        onChange={(event)=>setFormData({...formData, title: event.target.value})}/>
                         
                         <AddIngredients/>
                     

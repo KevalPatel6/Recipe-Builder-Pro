@@ -4,7 +4,7 @@ import '../styles/CreateRecipe.css'
 const Instructions = () => {
     return (
         <>
-        
+
             <h2>Instructions</h2>
 
             <textarea cols="50" maxlength="4096" name="instructions"
@@ -14,7 +14,5 @@ const Instructions = () => {
         </>
     )
 }
-
-
 
 export default Instructions
