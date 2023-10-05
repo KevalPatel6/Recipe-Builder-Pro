@@ -1,11 +1,8 @@
-
+import Nav from './Nav'
 
 function Header() {
     return (
-        <div className="header-container">
-
-        </div>
-
+        <Nav/>
     )
 }
 
