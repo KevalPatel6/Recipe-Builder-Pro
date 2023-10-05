@@ -1,3 +1,5 @@
+import UserCreatedRecipes from "../components/MyRecipes/UserCreatedRecipes"
+import SavedRecipes from '../components/MyRecipes/SavedRecipes'
 import { QUERY_ME } from "../utils/queries"
 import { useParams } from "react-router"
 
@@ -23,7 +25,7 @@ const MyRecipes = () => {
             <div className="recipes-container">
                 {/* If there is user recipes*/}
                 {data.me.createRecipes.length ?
-                    <CreatedRecipes recipes={data.me.createdRecipes}/>
+                    <UserCreatedRecipes recipes={data.me.createdRecipes}/>
                     :
                     <div>
                         <h3>You have not created any recipes!</h3>
