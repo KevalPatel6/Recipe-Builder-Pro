@@ -1,0 +1,22 @@
+[
+    {
+        "username": "carlos",
+        "email": "carlos@gmai.com",
+        "password": "test123"
+    },
+    {
+        "username": "keval",
+        "email": "keval@gmai.com",
+        "password": "test123"
+    },
+    {
+        "username": "john",
+        "email": "john@gmai.com",
+        "password": "test123"
+    },
+    {
+        "username": "jos",
+        "email": "jocelin@gmai.com",
+        "password": "test123"
+    }
+]
