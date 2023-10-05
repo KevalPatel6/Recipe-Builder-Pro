@@ -1,21 +1,27 @@
-function SelectedRecipe() {
-    return (
-        <div className="header-container">
-            <div id="recipeDisplay">
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { GET_RECIPE_BY_ID } from "./graphql/queries"; // Define this query
 
-            </div>
-            <div>
-                <section id="ingredientList">
+function RecipeDetail() {
+  const { id } = useParams();
+  const { loading, error, data } = useQuery(GET_RECIPE_BY_ID, {
+    variables: { id },
+  });
 
-                </section>
-                <section>
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
-                </section>
+  const recipe = data.recipe; // Adjust this based on your GraphQL query structure
 
-            </div>
-        </div>
-
-    )
+  return (
+    <div>
+      <h2>{recipe.title}</h2>
+      <img src={recipe.imageUrl} alt={recipe.title} />
+      <p>{recipe.description}</p>
+      {/* Display other recipe details here */}
+    </div>
+  );
 }
 
-export default SelectedRecipe;
+export default RecipeDetail;

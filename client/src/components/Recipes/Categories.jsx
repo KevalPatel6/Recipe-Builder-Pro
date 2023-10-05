@@ -1,18 +1,38 @@
-function Pantry() {
+function Categories() {
     return (
         <div className="header-container">
             <div id="searchContainer" class="container">
-                <div>
-                    <h1>Ingredient List</h1>
-                    <input type="text" id="ingredientInput" placeholder="Enter ingredient" />
-                    <button onclick="addIngredient()">Add</button>
-                </div>
+                <h1>What are you in the mood for ? </h1>
 
             </div>
 
-            <div>
-                <div id="ingredientList">
-
+            <div id="categoryContainer">
+                
+                <div>
+                    <Link to={'/recipes'}>
+                        <img src="" alt="" />
+                        <p></p>
+                    </Link>
+                </div>
+                
+                <div>
+                    <Link to={'/meals'}>
+                        <img src="" alt="" />
+                        <p></p>
+                    </Link>
+                </div>
+                
+                <div>
+                    <Link to={'/desserts'}>
+                        <img src="" alt="" />
+                        <p></p>
+                    </Link>
+                </div>
+                <div>
+                    <Link to={'/drinks'}>
+                        <img src="" alt="" />
+                        <p></p>
+                    </Link>  
                 </div>
             </div>
         </div>
@@ -20,4 +40,4 @@ function Pantry() {
     )
 }
 
-export default Pantry;
+export default Categories;
