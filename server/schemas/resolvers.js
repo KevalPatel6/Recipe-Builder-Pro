@@ -3,13 +3,13 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        user: async (parent, { id }, context) => {
+        user: async (parent, args, context) => {
             console.log(context.user)
-            return User.findOneById({ _id: id }); //populate recipes??
+            let result = await  User.findOne({ _id: context.user._id }); //populate recipes??
+            console.log(result)
+           return result
         },
-        users: async (parent, {username, email, password}, context) => {
-            return User.find({username, email, password})
-        },
+        
         // find by username or find by id??
         getProfile: async (parent, { username }) => {
             return User.findOne({ username });
@@ -44,6 +44,43 @@ const resolvers = {
             // console.log(recipeId)
             return Ingredient.find({ group: group });
         },
+
+        // getSavedRecipes: async (parent,  {userid}, context ) => {
+        //     console.log(userId)
+        //     const params = userid ? { userid } : {};
+        //     let result = await Recipe.find(params).sort({ recipeId });
+        //     console.log(result)
+        //     return result
+        //   },
+
+        // getSavedRecipes: async (parent, { userId }) => {
+        //     console.log(userId)
+        //       const user = await User.findById(userId);
+        //       if (!user) {
+        //         throw new Error("User not found");
+        //       }
+        //       const recipeIds = user.savedRecipes;
+        //       const recipes = await Recipe.find({ _id: { $in: [recipeIds] } });
+        //   console.log(recipes)
+        //       return [recipes];
+           
+        //   },
+          
+        getSavedRecipes: async (parent, {recipeId}) => {
+            console.log(recipeId)
+            let result = await User.find({ _id: recipeId });
+            console.log(result)
+            return result
+        },
+        
+        getCreatedRecipes: async (parent, {recipeId}) => {
+            console.log(recipeId)
+            let result = await Recipe.find({ recipeId }); //byuserid
+            console.log(result)
+            return result
+        },
+
+
 
     },
 
@@ -83,24 +120,26 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        saveRecipe: async (parent, { recipeId }, context) => {
+        saveRecipes: async (parent, { recipeId }, context) => {
             if (context.user) {
-
-                return await User.findOneAndUpdate(
+                console.log(typeof recipeId)
+                let result = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     {
                         $addToSet: {
-                            savedRecipes: {
+                            savedRecipes: 
                                 recipeId
-                            }
+                            
                         },
                     },
+                  
                     {
                         new: true,
                         runValidators: true,
                     }
-                );
-
+                    ).populate("savedRecipes");
+             console.log(result)
+             return result       
             }
             throw AuthenticationError;
         },

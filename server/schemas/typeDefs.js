@@ -1,9 +1,11 @@
 const typeDefs = `
   type User {
     _id: ID!
-    username: String
-    email: String
-    password: String
+    username: String!
+    email: String!
+    password: String!
+    savedRecipes: [Recipe]
+    createdRecipes: [Recipe]
   }
 
   type Ingredient {
@@ -19,6 +21,10 @@ const typeDefs = `
   }
 
   input InputIngredient {
+    name: String!
+    group: String!
+  }
+  input InputRecipe {
     name: String!
     group: String!
   }
@@ -42,7 +48,7 @@ const typeDefs = `
 
 
   type Query {
-    users: [User]
+
     user: User
     getProfile(username: String!): User
     me: User
@@ -52,6 +58,9 @@ const typeDefs = `
 
     getRecipeGroup(group: String!): [Recipe]
     getIngredientGroup(group: String!): [Ingredient]
+
+    getSavedRecipes(userId: ID!): User
+    getCreatedRecipes(recipeId: ID!): [Recipe]
     
     
   }
@@ -62,7 +71,7 @@ const typeDefs = `
     login(email: String!, password: String!): Auth 
 
     addIngredient( ingredientData: InputIngredient): Ingredient
-    saveRecipe: User
+    saveRecipes(recipeId: ID!): User
 
     removeRecipe(recipeId: ID!): Recipe
     removeIngredient(ingredientId: ID!): Ingredient
