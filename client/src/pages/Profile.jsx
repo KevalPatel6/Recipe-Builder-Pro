@@ -29,7 +29,7 @@ const Profile = () => {
                 </Link>
             </div>
             <div id="saved-recipes">
-                <Link to={`/profile/${profileId}/savedrecipes`}>
+                <Link to={`/profile/${profileId}/myrecipes`}>
                 <img id='save' src="" alt=""/>
                 <h1 className="recipe-header">Saved Recipes</h1>
                 </Link>

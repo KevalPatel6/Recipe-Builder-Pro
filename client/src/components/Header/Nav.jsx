@@ -7,7 +7,13 @@ function Nav() {
             <nav>
                 <ul>
                     <Link to={'/'}>
-                        <li>Home</li>
+                    <li>Home</li>
+                    </Link>
+                    <Link to={'profile/:profileId/myrecipes'}>
+                    <li>My Recipes</li>
+                    </Link>
+                    <Link to>
+                    <li to={'/loginAndSignup'}>Login</li>
                     </Link>
                     <div>
                         {/*If logged in, get profile of the user and display that. If not, show the Login button */}
