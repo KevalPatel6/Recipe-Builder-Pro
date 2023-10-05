@@ -59,7 +59,7 @@ const typeDefs = `
     getRecipeGroup(group: String!): [Recipe]
     getIngredientGroup(group: String!): [Ingredient]
 
-    getSavedRecipes(userId: ID!): User
+    getSavedRecipes: User
     getCreatedRecipes(recipeId: ID!): [Recipe]
     
     
