@@ -90,6 +90,16 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
+        addIngredientToUser: async (parent, { ingredientId }, context) => {
+            if (context.user) {
+                const user = await User.findOneAndUpdate({_id: context.user._id},
+                    
+                    {$addToSet: { ingredients: ingredientId}},
+                    );
+                return user;
+            }
+            throw AuthenticationError;
+        },
 
         saveRecipes: async (parent, { recipeId }, context) => {
             if (context.user) {

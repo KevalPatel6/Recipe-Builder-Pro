@@ -70,6 +70,8 @@ const typeDefs = `
     login(email: String!, password: String!): Auth 
 
     addIngredient( ingredientData: InputIngredient): Ingredient
+    addIngredientToUser( ingredientId: ID!): User
+    
     saveRecipes(recipeId: ID!): User
 
     removeRecipe(recipeId: ID!): Recipe
