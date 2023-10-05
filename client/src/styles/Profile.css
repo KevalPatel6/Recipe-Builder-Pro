@@ -1,0 +1,35 @@
+.title-headers{
+    margin-top: 5%;
+}
+
+
+.recipes-container{
+    width: 200px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.recipe-card{
+    margin-top: 5%;
+}
+
+.recipe-image{
+    height: 100%;
+    width: 200px;
+    border-color: black;
+    border-width: 1px;
+}
+
+.recipe-title{
+    text-align: center ;
+}
+
+.save-icon{
+    fill: gray;
+ 
+}
+
+.save-icon:hover{
+    fill: rgb(243, 146, 146);
+}
