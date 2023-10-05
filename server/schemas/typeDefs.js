@@ -12,7 +12,6 @@ const typeDefs = `
     _id: ID
     name: String
     group: String
-   
   }
 
   type Group {
@@ -24,6 +23,7 @@ const typeDefs = `
     name: String!
     group: String!
   }
+
   input InputRecipe {
     name: String!
     group: String!
@@ -46,9 +46,7 @@ const typeDefs = `
     user: User
   }
 
-
   type Query {
-
     user: User
     getProfile(username: String!): User
     me: User
