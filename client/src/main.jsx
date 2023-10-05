@@ -8,6 +8,7 @@ import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreatedRecipes.jsx'
+// import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render([
   {
