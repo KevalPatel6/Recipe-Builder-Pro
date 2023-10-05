@@ -9,10 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header/index.jsx';
 import Footer from './components/Footer/Footer.jsx'
-<<<<<<< HEAD
-=======
 // import { StoreProvider } from './utils/GlobalState';
->>>>>>> dccd2ecefba2ca45ac6ba24183d2c8131624ffad
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -37,17 +34,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div>
-<<<<<<< HEAD
-          <Header />
-          <Outlet />
-          <Footer />
-=======
         {/* <StoreProvider> */}
           <Header />
           <Outlet />
           <Footer />
         {/* </StoreProvider> */}
->>>>>>> dccd2ecefba2ca45ac6ba24183d2c8131624ffad
       </div>
     </ApolloProvider>
   );
