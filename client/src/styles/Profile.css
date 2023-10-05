@@ -1,24 +1,35 @@
-#profile{
-    display: flex;
-    margin-top: 7%;
+.title-headers{
+    margin-top: 5%;
 }
 
-#profile-pic{
+
+.recipes-container{
     width: 200px;
-    border-radius: 50%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
 }
 
-#username{
-    align-self: center;
-    margin-left: 50px;
+.recipe-card{
+    margin-top: 5%;
 }
 
-#recipe-section{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10%;
+.recipe-image{
+    height: 100%;
+    width: 200px;
+    border-color: black;
+    border-width: 1px;
 }
 
-.recipe-header{
-    margin-top: 2rem;
+.recipe-title{
+    text-align: center ;
+}
+
+.save-icon{
+    fill: gray;
+ 
+}
+
+.save-icon:hover{
+    fill: rgb(243, 146, 146);
 }

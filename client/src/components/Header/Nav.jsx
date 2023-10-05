@@ -8,6 +8,9 @@ function Nav() {
                     <Link to={'/'}>
                     <li>Home</li>
                     </Link>
+                    <Link to={'profile/:profileId/myrecipes'}>
+                    <li>My Recipes</li>
+                    </Link>
                     <Link to>
                     <li to={'/loginAndSignup'}>Login</li>
                     </Link>
