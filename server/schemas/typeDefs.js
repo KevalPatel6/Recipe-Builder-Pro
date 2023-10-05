@@ -60,7 +60,7 @@ const typeDefs = `
     getIngredientGroup(group: String!): [Ingredient]
 
     getSavedRecipes: User
-    getCreatedRecipes(recipeId: ID!): [Recipe]
+    getCreatedRecipes(recipeId: ID!): User
     
     
   }

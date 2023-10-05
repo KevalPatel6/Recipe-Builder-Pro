@@ -54,10 +54,10 @@ const resolvers = {
             return result
         },
 
-        getCreatedRecipes: async (parent, { recipeId }) => {
+        getCreatedRecipes: async (parent, { recipeId }, context) => {
             console.log(recipeId)
-            let result = await Recipe.find({ recipeId }); //byuserid
-            console.log(typeof result)
+            let result = await User.findOne({ _id: context.user._id }).populate('createdRecipes');
+            console.log( result)
             return result
         },
 
@@ -139,16 +139,14 @@ const resolvers = {
                     group
 
                 });
-                console.log(newRecipe)
+            
 
 
-                let result = await User.findOneAndUpdate(
+                const updatedUser = await User.findOneAndUpdate(
+                 
                     { _id: context.user._id },
                     {
-                        $addToSet: {
-                            createdRecipes: newRecipe._id
-
-                        },
+                        $addToSet: {createdRecipes: newRecipe._id  },
                     },
 
                     {
@@ -156,6 +154,8 @@ const resolvers = {
                         runValidators: true,
                     }
                 ).populate("savedRecipes");
+
+                console.log(updatedUser)
                 // on the logged in user update a property of created recipes add to set
                 // context.user.recipeList.push(newRecipe);
                 // await context.user.save();
