@@ -4,17 +4,10 @@ const bcrypt = require('bcrypt');
 const ingredientSchema = new Schema({
     name: {
         type: String,
-        
-    
-        
       },
     group: {
         type: String,
-        
-       
       },
-    
-
 })
 
 const Ingredient = model('Ingredient', ingredientSchema);
