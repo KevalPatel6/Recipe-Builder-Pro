@@ -1,13 +1,14 @@
 import {useQuery} from '@apollo/client'
-import {Navigate, useParams} from 'react-router-dom'
-import { QUERY_USER } from '../utils/queries'
+import {Link, Navigate} from 'react-router-dom'
+import { QUERY_ME } from '../utils/queries'
+
+import Auth from '../utils/auth';
+
 
 
 const Profile = () => {
-    const {profileId} = useParams()
-    const {loading, data} = useQuery(QUERY_USER, {
-        variables: {_id: profileId}
-    })
+    console.log(Auth.getProfile().data)
+    const {loading, data} = useQuery(QUERY_ME)
 
     if(loading){
         return <div>
@@ -19,17 +20,17 @@ const Profile = () => {
         <main>
         <div id="profile">
             <img id='profile-pic' src="./assets/Profile-Avatar.png" alt="Generic Profile Image"/>
-            <h1 id="username">{data.user.username}</h1>
+            <h1 id="username">{data.username}</h1>
         </div>
         <div id="recipe-section">
             <div id="create-recipe">
-                <Link to={`/profile/${profileId}/createrecipe`}>
+                <Link to={`/me/createrecipe`}>
                 <img id='create' src="" alt=""/>
                 <h1 className="recipe-header">Create new Recipe</h1>
                 </Link>
             </div>
             <div id="saved-recipes">
-                <Link to={`/profile/${profileId}/myrecipes`}>
+                <Link to={`/me/myrecipes`}>
                 <img id='save' src="" alt=""/>
                 <h1 className="recipe-header">Saved Recipes</h1>
                 </Link>
