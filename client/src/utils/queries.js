@@ -12,13 +12,32 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+ query Me {
+  me {
+    _id
+    username
+    email
+    password
+    savedRecipes {
       _id
-      username
-      email
+      title
+      description
+      ingredients {
+        _id
+        name
+        group
+      }
+      instructions
+      servings
+      totalTime
+      imageUrl
+      group
+    }
+    createdRecipes {
+      _id
     }
   }
+}
 `;
 
 export const GET_PROFILE = gql`

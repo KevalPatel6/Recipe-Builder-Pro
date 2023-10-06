@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './styles/index.css'
 import Home from './pages/Home.jsx'
-import Login from './components/LoginAndSignup/index.jsx'
+import Login from './pages/Login.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
-import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
+// import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AllRecipes from './pages/AllRecipes.jsx'
@@ -35,17 +35,17 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: '/profile/:profileId',
+        path: '/me',
         element: <Profile />
       },
       {
-        path: '/profile/:profileId/myrecipes',
+        path: '/me/myrecipes',
         element: <MyRecipes />
       },
-      {
-        path: '/profile/:profileId/createrecipe',
-        element: <CreateRecipe />
-      }
+      // {
+      //   path: '/me/createrecipe',
+      //   element: <CreateRecipe />
+      // }
     ]
   }
 ])
