@@ -3,8 +3,9 @@ import Auth from '../../utils/auth'
 import {useQuery} from '@apollo/client'
 import {QUERY_ME} from '../../utils/queries'
 
+
 function Nav() {
-    const {data} = useQuery(QUERY_ME)
+    const {loading, data} = useQuery(QUERY_ME)
     
     return (
         <div className="nav-container" style={{ background: 'black' }}>
@@ -30,8 +31,9 @@ function Nav() {
                         {Auth.loggedIn() ? (
                             <>
                                 <Link id="username" to={"/me"}>
-                                    <li>{data.me.username}</li>
+                                    <li>{loading ? `Loading` : data.me.username}</li>
                                 </Link>
+                                <li onClick={()=>Auth.logout()}>Logout</li>
                             </>)
                             :
                             (<>
