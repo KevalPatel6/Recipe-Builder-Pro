@@ -15,7 +15,7 @@ const resolvers = {
         },
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                return User.findOne({ _id: context.user._id }).populate("ingredients").populate("savedRecipes");
             }
             throw AuthenticationError;
         },
@@ -90,18 +90,29 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-        addIngredientToUser: async (parent, { ingredientId }, context) => {
+
+        addIngredientToUser: async (parent, { name, group }, context) => {
             if (context.user) {
+                const ingredient = await Ingredient.create({name, group});
+                const ingredientId = ingredient._id.toString();
+
+                // console.log(ingredientId, ingredient._id.toString())
+
+                //Create an ingredient you will need to pass name & group.
+                //After that update the user with the id of the created ingredient
                 const user = await User.findOneAndUpdate({_id: context.user._id},
                     
                     {$addToSet: { ingredients: ingredientId}},
-                    );
+                    { new: true }
+                    ).populate('savedRecipes').populate("ingredients")
+                    console.log(user)
                 return user;
             }
             throw AuthenticationError;
         },
 
         saveRecipes: async (parent, { recipeId }, context) => {
+            console.log(recipeId)
             if (context.user) {
                 let result = await User.findOneAndUpdate(
                     { _id: context.user._id },

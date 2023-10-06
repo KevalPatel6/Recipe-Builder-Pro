@@ -6,6 +6,7 @@ const typeDefs = `
     password: String!
     savedRecipes: [Recipe]
     createdRecipes: [Recipe]
+    ingredients:[Ingredient]
   }
 
   type Ingredient {
@@ -70,7 +71,8 @@ const typeDefs = `
     login(email: String!, password: String!): Auth 
 
     addIngredient( ingredientData: InputIngredient): Ingredient
-    addIngredientToUser( ingredientId: ID!): User
+
+    addIngredientToUser( name: String, group: String): User
     
     saveRecipes(recipeId: ID!): User
 

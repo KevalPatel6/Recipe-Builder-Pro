@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useMutation } from '@apollo/client';
-import { ADD_INGREDIENT_TO_USER } from '../../utils/queries';
+import { ADD_INGREDIENT_TO_USER } from '../../utils/mutations';
 
 import '../../styles/Login.css'
 
@@ -19,7 +19,7 @@ function Pantry() {
     
         try {
           const data = await addIngredient({
-            variables: { userId, ingredient },
+            variables: { ingredient },
           });
     
           setIngredient('');
@@ -31,14 +31,14 @@ function Pantry() {
 
     return (
         <div className="header-container">
-            <div id="searchContainer" class="container">
+            <div id="searchContainer" className="container">
                 <div>
                     <h1>Search for Ingredients</h1>
                     <input type="text" id="ingredientInput" placeholder="Enter ingredient" 
                     value={ingredient} 
                     onChange={(event) => setIngredient(event.target.value)}/> 
                     
-                    <button onclick= {handleClick} >Add</button>
+                    <button onClick= {handleClick} >Add</button>
                     <button>Choose Type??</button> {/*  link to ChooseType on click */}
                 </div>
 

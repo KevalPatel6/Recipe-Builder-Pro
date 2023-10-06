@@ -12,7 +12,9 @@ const Login = () => {
     const toggleClass = (tabName) =>{
         setActiveTab(tabName)
     }
-    
+    // const handleClick = (e)=> {
+    //     e.prevendDefault()
+    // }
     
     return (
         <main>
@@ -20,8 +22,8 @@ const Login = () => {
                 <div id='title-container'>
                     <h1 
                     className={activeTab === 'Login' ? 'active btn' : 'btn'}
-                    onClick={toggleClass('Login')}>Login</h1>
-                    <h1>/</h1>
+                    onClick={()=>toggleClass('Login')}>Login</h1>
+                    {/* <h1 onClick={handleClick}>/</h1> */}
                     <h1 
                     className={activeTab === 'Signup' ? 'active btn' : 'btn'} 
                     onClick={()=>toggleClass('Signup')}>Signup</h1>
