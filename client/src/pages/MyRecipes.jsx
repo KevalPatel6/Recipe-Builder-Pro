@@ -1,3 +1,4 @@
+import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ME } from "../utils/queries"
 import { useParams } from "react-router"
 
@@ -23,7 +24,7 @@ const MyRecipes = () => {
             <div className="recipes-container">
                 {/* If there is user recipes*/}
                 {data.me.createRecipes.length ?
-                    <CreatedRecipes recipes={data.me.createdRecipes}/>
+                    <CreatedRecipes recipes={data.me.createdRecipes} />
                     :
                     <div>
                         <h3>You have not created any recipes!</h3>
@@ -35,13 +36,18 @@ const MyRecipes = () => {
             </div>
             <div className="recipes-container">
                 {/* If there is user recipes*/}
-                {data.me.savedRecipes.length ?
-                    <SavedRecipes recipes={data.me.savedRecipes}/>
+                {
+                    data.me.savedRecipes.map(r => {
+                        return <Recipe recipe={r}></Recipe>
+                    })
+                }
+                {/* {data.me.savedRecipes.length ?
+                    <SavedRecipes recipes={data.me.savedRecipes} />
                     :
                     <div>
                         <h3>You have not saved any recipes!</h3>
                     </div>
-                }
+                } */}
             </div>
 
         </main>

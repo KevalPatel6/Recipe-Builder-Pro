@@ -12,6 +12,7 @@ import Ingredients from './pages/LookForRecipe/Ingredients.jsx'
 import ChooseMeal from './pages/LookForRecipe/ChooseMeal.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import AllRecipes from './pages/AllRecipes.jsx'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: '/recipes',
+        element: <AllRecipes />
       },
       {
         path: '/loginAndSignup',
