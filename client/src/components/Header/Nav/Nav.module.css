@@ -1,0 +1,12 @@
+#title-header{
+    display: flex;
+}
+
+.logout{
+    color: white;
+    cursor: pointer;
+}
+
+.logout:hover{
+    color:blue
+}

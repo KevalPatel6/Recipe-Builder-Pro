@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './styles/index.css'
 import Home from './pages/Home.jsx'
-import Login from './components/LoginAndSignup/index.jsx'
+import Login from './pages/Login.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
@@ -16,6 +16,7 @@ import Drinks from'./components/Choose-Meal/Drinks.jsx'
 import Desserts from'./components/Choose-Meal/Desserts.jsx'
 
 
+// import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -38,11 +39,11 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: '/profile/:profileId',
+        path: '/me',
         element: <Profile />
       },
       {
-        path: '/profile/:profileId/myrecipes',
+        path: '/me/myrecipes',
         element: <MyRecipes />
       },
       {
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
         path: '/profile/Desserts',
         element: <Desserts/>
       },
+      // {
+      //   path: '/me/createrecipe',
+      //   element: <CreateRecipe />
+      // }
     ]
   }
 ]
