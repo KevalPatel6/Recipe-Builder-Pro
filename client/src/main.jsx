@@ -6,9 +6,11 @@ import Home from './pages/Home.jsx'
 import Login from './components/LoginAndSignup/index.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
+import AllRecipes from './pages/AllRecipes.jsx'
+import EnterIngredient from './pages/LookForRecipe/EnterIngredients.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
-import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
-// import './index.css'
+import CreateRecipe from './components/MyRecipes/CreateRecipes.jsx'
+// import './index.css'./components/MyRecipes/CreateRecipe.jsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -40,7 +42,11 @@ const router = createBrowserRouter([
       {
         path: '/profile/:profileId/createrecipe',
         element: <CreateRecipe/>
-      }
+      },
+      {
+        path: '/profile/:profileId/enterIngredient',
+        element: <EnterIngredient/>
+      },
     ]
   }
 ]
