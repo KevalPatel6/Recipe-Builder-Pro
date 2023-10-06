@@ -8,6 +8,8 @@ import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
+import Ingredients from './pages/LookForRecipe/Ingredients.jsx'
+import ChooseMeal from './pages/LookForRecipe/ChooseMeal.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -36,6 +38,15 @@ const router = createBrowserRouter([
       {
         path: '/profile/:profileId/createrecipe',
         element: <CreateRecipe />
+      },
+      {
+        path: '/ingredients',
+        element: <Ingredients />
+      },
+      {
+        path: '/Choose-Meal',
+        element: <ChooseMeal />
+
       }
     ]
   }

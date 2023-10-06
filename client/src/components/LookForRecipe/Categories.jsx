@@ -1,3 +1,8 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+
+
 function Categories() {
     return (
         <div className="header-container">
@@ -11,27 +16,27 @@ function Categories() {
                 <div>
                     <Link to={'/recipes'}>
                         <img src="" alt="" />
-                        <p></p>
+                        <h2>Recipes</h2>
                     </Link>
                 </div>
                 
                 <div>
                     <Link to={'/meals'}>
                         <img src="" alt="" />
-                        <p></p>
+                        <h2>Meals</h2>
                     </Link>
                 </div>
                 
                 <div>
                     <Link to={'/desserts'}>
                         <img src="" alt="" />
-                        <p></p>
+                        <h2>Desserts</h2>
                     </Link>
                 </div>
                 <div>
                     <Link to={'/drinks'}>
                         <img src="" alt="" />
-                        <p></p>
+                        <h2>Drinks</h2>
                     </Link>  
                 </div>
             </div>

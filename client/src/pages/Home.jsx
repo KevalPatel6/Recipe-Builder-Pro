@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/home.css';
 
 const Home = () => {
@@ -11,7 +12,11 @@ const Home = () => {
             <div id="welcome" style={{ 'color': 'white', 'fontSize': '50px' }}>
                 <h1>Welcome</h1>
                 <p>Let's whip up something together with what you've got on hand!</p>
-                <p>To get started, lets Login</p>
+            </div>
+            <div>
+                <Link to="/ingredients"> 
+                <button>Next Page</button>
+                </Link>
             </div>
         </div>
     )

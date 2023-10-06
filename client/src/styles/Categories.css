@@ -1,0 +1,57 @@
+
+#header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+}
+
+
+
+
+/* Header */
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/cooking-rotated.jpg'); /* Set your desired background image */
+    background-size: cover;
+    /* transform: rotate(180deg); Rotate the background image by 180 degrees */
+}
+
+header {
+    background-color: transparent; /* Fully transparent background */
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+nav {
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
