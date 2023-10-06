@@ -2,6 +2,7 @@ import AddIngredients from '../components/CreateNewRecipe/AddIngredients'
 import ImageUploader from '../components/CreateNewRecipe/ImageUploader'
 import Instructions from '../components/CreateNewRecipe/Instructions'
 import { useState } from 'react'
+import {useMutation} from 'react-router-dome'
 
 import '../styles/CreateRecipe.css'
 
@@ -17,9 +18,21 @@ function CreateNewRecipe()  {
     })
 
     const createRecipe = ()=>{
-        setFormData
-
-
+        const {data} = useMutation(ADD_RECIPE,{
+            variables: {...formData                                         }
+         })
+         
+        // Reset the form//
+         setFormData({
+        title: '',
+        description: '',
+        ingredients: '',
+        instructions: '',
+        servings: '',
+        totalTime: '',
+        group: ''
+         })
+        
     }
 
 
@@ -41,6 +54,8 @@ function CreateNewRecipe()  {
                         onChange={(event)=>setFormData({...formData, title: event.target.value})}/>
                         
                         <AddIngredients/>
+
+                        {/* Need to add description, servings, totalTime, group */}
                     
                     <div id="instructions-container">
                         
@@ -48,7 +63,8 @@ function CreateNewRecipe()  {
 
                     </div>
 
-                    <button id="btn">Create Recipe</button>
+                    <button id="btn"
+                    onClick={()=>createRecipe}>Create Recipe</button>
 
                 </div>
             </div>
