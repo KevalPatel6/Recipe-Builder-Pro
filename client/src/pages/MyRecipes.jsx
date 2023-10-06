@@ -1,6 +1,8 @@
 import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ME } from "../utils/queries"
+import {useQuery} from "@apollo/client"
 import { useParams } from "react-router"
+import { graphql } from "graphql"
 
 
 const MyRecipes = () => {

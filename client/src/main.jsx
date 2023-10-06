@@ -8,9 +8,15 @@ import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
 import EnterIngredient from './pages/LookForRecipe/EnterIngredients.jsx'
+import ChooseType from './pages/LookForRecipe/ChooseType.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreateRecipes.jsx'
-// import './index.css'./components/MyRecipes/CreateRecipe.jsx
+import Meals from'./components/Choose-Meal/Meals.jsx'
+import Drinks from'./components/Choose-Meal/Drinks.jsx'
+import Desserts from'./components/Choose-Meal/Desserts.jsx'
+
+
+// import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -44,10 +50,30 @@ const router = createBrowserRouter([
         element: <CreateRecipe/>
       },
       {
-        path: '/profile/:profileId/enterIngredient',
+        path: '/profile/enterIngredient',
         element: <EnterIngredient/>
+      },
+      {
+        path: '/profile/chooseType',
+        element: <ChooseType/>
+      },
+      {
+        path: '/profile/Meals',
+        element: <Meals/>
+      },
+      {
+        path: '/profile/Drinks',
+        element: <Drinks/>
+      },
+      {
+        path: '/profile/Desserts',
+        element: <Desserts/>
       },
     ]
   }
 ]
+)
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
 )
