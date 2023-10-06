@@ -9,6 +9,7 @@ import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
 // import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: '/recipes',
+        element: <AllRecipes />
       },
       {
         path: '/loginAndSignup',
