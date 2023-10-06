@@ -1,8 +1,6 @@
 import {useQuery} from '@apollo/client'
 import { useState } from "react"
-
-
-//import {Navigate, useParams} from 'react-router-dom'
+import {Navigate, useParams} from 'react-router-dom'
 import { QUERY_USER } from '../utils/queries'
 
 

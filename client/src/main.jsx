@@ -26,6 +26,10 @@ const router = createBrowserRouter([
         path: '/recipes',
         element: <AllRecipes />
       },
+      // {
+      //   path: '/recipe',
+      //   element: <ViewRecipe />
+      // },
       {
         path: '/loginAndSignup',
         element: <Login />
