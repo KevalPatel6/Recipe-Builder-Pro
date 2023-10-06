@@ -1,12 +1,12 @@
 
 
 
-const SavedRecipe = ({ recipes }) => {
+const CreatedRecipe = ({ recipes }) => {
 
 
     return (
         <>
-            {/*Need to map over the users saved recipes */}
+            {/*Need to map over the users created recipes */}
             {recipes.map((recipe) => {
 
                 return (
@@ -33,12 +33,12 @@ const SavedRecipe = ({ recipes }) => {
                             </Link>
                         </div>
                     </div>
-                )
-            }
+             )
+                }
             )
             }
         </>
     )
 }
 
-export default SavedRecipes
+export default CreatedRecipe

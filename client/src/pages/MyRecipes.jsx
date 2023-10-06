@@ -1,14 +1,15 @@
-import UserCreatedRecipes from "../components/MyRecipes/UserCreatedRecipes"
 import SavedRecipes from '../components/MyRecipes/SavedRecipes'
+import CreatedRecipes from '../components/MyRecipes/CreatedRecipes'
+import {useQuery} from '@apollo/client'
+
 import { QUERY_ME } from "../utils/queries"
 import { useParams } from "react-router"
 
 
 const MyRecipes = () => {
-    const { profileId } = useParams()
-    const { loading, data } = useQuery(QUERY_ME, {
-        variables: { _id: profileId }
-    })
+    const { loading, data } = useQuery(QUERY_ME)
+
+    console.log(data)
 
     if (loading) {
         return <div>
@@ -24,8 +25,8 @@ const MyRecipes = () => {
             </div>
             <div className="recipes-container">
                 {/* If there is user recipes*/}
-                {data.me.createRecipes.length ?
-                    <UserCreatedRecipes recipes={data.me.createdRecipes}/>
+                {data.me.createdRecipes.length ?
+                    <CreatedRecipes recipes={data.me.createdRecipes} />
                     :
                     <div>
                         <h3>You have not created any recipes!</h3>
@@ -38,7 +39,7 @@ const MyRecipes = () => {
             <div className="recipes-container">
                 {/* If there is user recipes*/}
                 {data.me.savedRecipes.length ?
-                    <SavedRecipes recipes={data.me.savedRecipes}/>
+                      <SavedRecipes recipes={data.me.savedRecipes}/>
                     :
                     <div>
                         <h3>You have not saved any recipes!</h3>

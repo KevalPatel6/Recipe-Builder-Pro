@@ -1,8 +1,10 @@
-import Nav from './Nav'
+import Nav from './Nav/index.jsx'
 
 function Header() {
     return (
-        <Nav/>
+        <div>
+            <Nav />
+        </div>
     )
 }
 

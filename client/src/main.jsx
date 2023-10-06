@@ -3,40 +3,56 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './styles/index.css'
 import Home from './pages/Home.jsx'
-import Login from './components/LoginAndSignup/index.jsx'
+import Login from './pages/Login.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
-import CreateNewRecipe from './pages/CreateNewRecipe.jsx'
+// import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
 // import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import AllRecipes from './pages/AllRecipes.jsx'
 
-ReactDOM.createRoot(document.getElementById('root')).render([
+const router = createBrowserRouter([
   {
     path: "/",
-    element:<App/>,
-    errorElement: <Error/>,
+    element: <App />,
+    errorElement: <Error />,
     children: [
       {
-        index: true, 
-        element: <Home/>
+        index: true,
+        element: <Home />
+      },
+      {
+        path: '/recipes',
+        element: <AllRecipes />
       },
       {
         path: '/loginAndSignup',
-        element: <Login/>
+        element: <Login />
       },
       {
-        path: '/profile/:profileId',
-        element: <Profile/>
+        path: '/me',
+        element: <Profile />
       },
       {
-        path: '/profile/:profileId/myrecipes',
-        element: <MyRecipes/>
+        path: '/me/myrecipes',
+        element: <MyRecipes />
       },
+<<<<<<< HEAD
       {
         path: '/profile/:profileId/createrecipe',
         element: <CreateNewRecipe/>
       }
+=======
+      // {
+      //   path: '/me/createrecipe',
+      //   element: <CreateRecipe />
+      // }
+>>>>>>> cc2bca9d0c95528859240b2b5b0f365148f3088a
     ]
   }
-]
+])
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
 )
