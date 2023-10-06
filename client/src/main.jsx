@@ -9,34 +9,38 @@ import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
 // import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-ReactDOM.createRoot(document.getElementById('root')).render([
+const router = createBrowserRouter([
   {
     path: "/",
-    element:<App/>,
-    errorElement: <Error/>,
+    element: <App />,
+    errorElement: <Error />,
     children: [
       {
-        index: true, 
-        element: <Home/>
+        index: true,
+        element: <Home />
       },
       {
         path: '/loginAndSignup',
-        element: <Login/>
+        element: <Login />
       },
       {
         path: '/profile/:profileId',
-        element: <Profile/>
+        element: <Profile />
       },
       {
         path: '/profile/:profileId/myrecipes',
-        element: <MyRecipes/>
+        element: <MyRecipes />
       },
       {
         path: '/profile/:profileId/createrecipe',
-        element: <CreateRecipe/>
+        element: <CreateRecipe />
       }
     ]
   }
-]
+])
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
 )
