@@ -3,7 +3,7 @@
 function Pantry() {
     return (
         <div className="header-container">
-            <div id="searchContainer" class="container">
+            <div id="searchContainer" className="container">
                 <div>
                     <h1>Ingredient List</h1>
                     <input type="text" id="ingredientInput" placeholder="Enter ingredient" />

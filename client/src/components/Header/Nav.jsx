@@ -3,17 +3,17 @@ import Auth from '../../utils/auth'
 
 function Nav() {
     return (
-        <div className="nav-container">
+        <div className="nav-container" style={{ background: 'black' }}>
             <nav>
                 <ul>
                     <Link to={'/'}>
-                    <li>Home</li>
+                        <li>Home</li>
                     </Link>
                     <Link to={'profile/:profileId/myrecipes'}>
-                    <li>My Recipes</li>
+                        <li>My Recipes</li>
                     </Link>
                     <Link to>
-                    <li to={'/loginAndSignup'}>Login</li>
+                        <li to={'/loginAndSignup'}>Login</li>
                     </Link>
                     <div>
                         {/*If logged in, get profile of the user and display that. If not, show the Login button */}
