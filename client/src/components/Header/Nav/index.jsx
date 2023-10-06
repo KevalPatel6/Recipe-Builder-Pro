@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Auth from '../../utils/auth'
+import Auth from '../../../utils/auth'
 import {useQuery} from '@apollo/client'
-import {QUERY_ME} from '../../utils/queries'
+import {QUERY_ME} from '../../../utils/queries'
 
-import navStyles from '../../styles/Nav.module.css'
+import navStyles from './Nav.module.css'
 
 function Nav() {
     const {loading, data} = useQuery(QUERY_ME)
