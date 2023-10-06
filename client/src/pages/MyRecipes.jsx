@@ -2,7 +2,6 @@ import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ME } from "../utils/queries"
 import { useParams } from "react-router"
 
-
 const MyRecipes = () => {
     const { profileId } = useParams()
     const { loading, data } = useQuery(QUERY_ME, {
