@@ -1,15 +1,20 @@
 [
     {
+        
         "title": "Classic Lemonade",
         "description": "A refreshing and tangy beverage perfect for hot days.",
         "ingredients": [
             {
-                "name": "lemons",
-                "group": "test"
+                "name": "Lemons"
             },
             {
-                "name": "water",
-                "group": "test"
+                "name": "Sugar"
+            },
+            {
+                "name": "Water"
+            },
+            {
+                "name": "Ice"
             }
         ],
         "instructions": "Squeeze lemons for juice. Mix with sugar and water until sugar dissolves. Serve over ice.",
@@ -17,5 +22,817 @@
         "totalTime": 10,
         "imageUrl": "classicLemonade.png",
         "group": "Drinks"
+    },
+    {
+        "title": "Mango Lassi",
+        "description": "A creamy and sweet Indian beverage made from mango and yogurt.",
+        "ingredients": [
+            {
+                "name": "Mango pulp"
+            },
+            {
+                "name": "Yogurt"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Water"
+            },
+            {
+                "name": "Cardamom (optional)"
+            }
+        ],
+        "instructions": "Blend all ingredients until smooth. Serve chilled.",
+        "servings": 2,
+        "totalTime": 10,
+        "imageUrl": "mangoLassi.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Cinnamon Almond Milk",
+        "description": "A refreshing dairy-free milk infused with cinnamon and vanilla.",
+        "ingredients": [
+            {
+                "name": "Almonds"
+            },
+            {
+                "name": "Water"
+            },
+            {
+                "name": "Cinnamon"
+            },
+            {
+                "name": "Honey"
+            },
+            {
+                "name": "Vanilla extract"
+            }
+        ],
+        "instructions": "Blend almonds and water, strain to get almond milk. Add cinnamon, honey, and vanilla. Mix well and serve.",
+        "servings": 4,
+        "totalTime": 15,
+        "imageUrl": "cinnamonAlmondMilk.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Minty Iced Tea",
+        "description": "A refreshing iced tea with a hint of mint and lemon.",
+        "ingredients": [
+            {
+                "name": "Black tea bags"
+            },
+            {
+                "name": "Fresh mint leaves"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Lemon slices",
+                "quantity": "4-5"
+            },
+            {
+                "name": "Ice"
+            }
+        ],
+        "instructions": "Brew tea and let it cool. Add fresh mint leaves, sugar, and lemon slices. Serve over ice.",
+        "servings": 4,
+        "totalTime": 20,
+        "imageUrl": "mintyIcedTea.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Pina Colada Smoothie",
+        "description": "A tropical smoothie inspired by the classic Pina Colada cocktail, but without the alcohol.",
+        "ingredients": [
+            {
+                "name": "Pineapple chunks"
+            },
+            {
+                "name": "Coconut milk"
+            },
+            {
+                "name": "Ice"
+            },
+            {
+                "name": "Honey"
+            }
+        ],
+        "instructions": "Blend all ingredients until smooth. Serve immediately.",
+        "servings": 2,
+        "totalTime": 10,
+        "imageUrl": "pinaColadaSmoothie.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Ginger Zinger",
+        "description": "A fizzy and refreshing drink with the warmth of ginger, sweetness of honey, and tang of lemon.",
+        "ingredients": [
+            {
+                "name": "Fresh ginger"
+            },
+            {
+                "name": "Lemon"
+            },
+            {
+                "name": "Honey"
+            },
+            {
+                "name": "Sparkling water"
+            },
+            {
+                "name": "Ice"
+            }
+        ],
+        "instructions": "Blend ginger, lemon, and honey with a little water. Strain and mix with sparkling water. Serve over ice.",
+        "servings": 2,
+        "totalTime": 10,
+        "imageUrl": "gingerZinger.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Cocoa Coconut Latte",
+        "description": "A delicious cocoa and coconut-infused latte with a hint of sweetness.",
+        "ingredients": [
+            {
+                "name": "Cocoa powder"
+            },
+            {
+                "name": "Coconut oil"
+            },
+            {
+                "name": "Coffee"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Cream (or milk)"
+            }
+        ],
+        "instructions": "Brew coffee. Mix cocoa powder and sugar. Add to coffee along with coconut oil. Blend until frothy. Top with cream or milk.",
+        "servings": 1,
+        "totalTime": 10,
+        "imageUrl": "cocoaCoconutLatte.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Spiced Apple Cider",
+        "description": "Warm and aromatic apple cider with a blend of spices and citrus.",
+        "ingredients": [
+            {
+                "name": "Apple cider"
+            },
+            {
+                "name": "Cinnamon sticks"
+            },
+            {
+                "name": "Cloves"
+            },
+            {
+                "name": "Allspice"
+            },
+            {
+                "name": "Orange slices"
+            }
+        ],
+        "instructions": "Heat apple cider with spices and orange slices. Simmer for 10 minutes, strain, and serve hot.",
+        "servings": 4,
+        "totalTime": 15,
+        "imageUrl": "spicedAppleCider.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Blueberry Basil Spritzer",
+        "description": "A refreshing spritzer bursting with blueberry and basil flavors.",
+        "ingredients": [
+            {
+                "name": "Blueberries"
+            },
+            {
+                "name": "Basil leaves"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Club soda"
+            },
+            {
+                "name": "Lemon juice"
+            }
+        ],
+        "instructions": "Muddle blueberries, basil, and sugar. Add lemon juice. Top with club soda. Stir and serve.",
+        "servings": 2,
+        "totalTime": 5,
+        "imageUrl": "blueberryBasilSpritzer.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Turmeric Golden Milk",
+        "description": "A soothing and anti-inflammatory turmeric-infused warm milk drink.",
+        "ingredients": [
+            {
+                "name": "Milk (or almond milk)"
+            },
+            {
+                "name": "Turmeric"
+            },
+            {
+                "name": "Black pepper"
+            },
+            {
+                "name": "Honey"
+            },
+            {
+                "name": "Cinnamon"
+            }
+        ],
+        "instructions": "Heat milk with turmeric, black pepper, and cinnamon. Once hot, remove from heat and add honey. Stir well and serve warm.",
+        "servings": 1,
+        "totalTime": 8,
+        "imageUrl": "turmericGoldenMilk.png",
+        "group": "Drinks"
+    },
+    {
+        "title": "Classic Tiramisu",
+        "description": "A timeless Italian dessert with layers of coffee-soaked ladyfingers and creamy mascarpone.",
+        "ingredients": [
+            {
+                "name": "Ladyfingers"
+            },
+            {
+                "name": "Coffee"
+            },
+            {
+                "name": "Mascarpone cheese"
+            },
+            {
+                "name": "Eggs"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Cocoa powder"
+            },
+            {
+                "name": "Vanilla extract"
+            },
+            {
+                "name": "Rum or Amaretto (optional)"
+            }
+        ],
+        "instructions": "Dip ladyfingers in coffee and layer in a dish. Mix mascarpone, eggs, sugar, and liquor. Layer over ladyfingers. Chill and dust with cocoa before serving.",
+        "servings": 6,
+        "totalTime": 30,
+        "imageUrl": "classicTiramisu.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Blueberry Cheesecake",
+        "description": "A creamy cheesecake with a graham cracker crust, topped with fresh blueberries and lemon zest.",
+        "ingredients": [
+            {
+                "name": "Graham cracker crust"
+            },
+            {
+                "name": "Cream cheese"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Eggs"
+            },
+            {
+                "name": "Vanilla extract"
+            },
+            {
+                "name": "Blueberries"
+            },
+            {
+                "name": "Lemon zest"
+            }
+        ],
+        "instructions": "Mix cream cheese, sugar, eggs, and vanilla. Pour into crust. Top with blueberries and zest. Bake until set.",
+        "servings": 8,
+        "totalTime": 60,
+        "imageUrl": "blueberryCheesecake.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Chocolate Lava Cake",
+        "description": "A decadent chocolate dessert with a gooey center.",
+        "ingredients": [
+            {
+                "name": "Butter"
+            },
+            {
+                "name": "Chocolate"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Eggs"
+            },
+            {
+                "name": "Flour"
+            },
+            {
+                "name": "Salt"
+            }
+        ],
+        "instructions": "Melt chocolate and butter. Mix with other ingredients. Pour into ramekins. Bake until edges are set but center is gooey.",
+        "servings": 4,
+        "totalTime": 25,
+        "imageUrl": "chocolateLavaCake.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Lemon Sorbet",
+        "description": "A refreshing and tangy lemon-flavored sorbet.",
+        "ingredients": [
+            {
+                "name": "Lemons"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Water"
+            }
+        ],
+        "instructions": "Mix sugar and water until dissolved. Add lemon juice. Freeze. Blend before serving for a smoother texture.",
+        "servings": 6,
+        "totalTime": 240,
+        "imageUrl": "lemonSorbet.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Coconut Panna Cotta",
+        "description": "A creamy dessert made with coconut milk and topped with pineapple or mango.",
+        "ingredients": [
+            {
+                "name": "Coconut milk"
+            },
+            {
+                "name": "Gelatin"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Vanilla extract"
+            },
+            {
+                "name": "Pineapple or Mango for topping"
+            }
+        ],
+        "instructions": "Dissolve gelatin in cold water. Heat coconut milk and sugar. Add gelatin and vanilla. Pour into molds and chill. Top with fruit.",
+        "servings": 4,
+        "totalTime": 180,
+        "imageUrl": "coconutPannaCotta.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Raspberry Chocolate Tart",
+        "description": "A delightful tart with a rich chocolate filling and fresh raspberries.",
+        "ingredients": [
+            {
+                "name": "Chocolate crust"
+            },
+            {
+                "name": "Dark chocolate"
+            },
+            {
+                "name": "Cream"
+            },
+            {
+                "name": "Raspberries"
+            },
+            {
+                "name": "Sugar"
+            }
+        ],
+        "instructions": "Melt chocolate in cream. Pour into crust. Chill. Top with raspberries and a sprinkle of sugar.",
+        "servings": 8,
+        "totalTime": 60,
+        "imageUrl": "raspberryChocolateTart.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Almond Joy Bites",
+        "description": "A sweet treat with almonds, coconut, condensed milk, and chocolate coating.",
+        "ingredients": [
+            {
+                "name": "Almonds"
+            },
+            {
+                "name": "Coconut flakes"
+            },
+            {
+                "name": "Condensed milk"
+            },
+            {
+                "name": "Chocolate"
+            },
+            {
+                "name": "Salt"
+            }
+        ],
+        "instructions": "Mix coconut and condensed milk. Form into balls, press almond on top. Dip in melted chocolate. Chill.",
+        "servings": 12,
+        "totalTime": 45,
+        "imageUrl": "almondJoyBites.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Strawberry Shortcake",
+        "description": "A classic dessert with biscuits or sponge cake, fresh strawberries, and whipped cream.",
+        "ingredients": [
+            {
+                "name": "Biscuits or sponge cake"
+            },
+            {
+                "name": "Strawberries"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Whipped cream"
+            }
+        ],
+        "instructions": "Slice and sugar strawberries. Layer over biscuits or cake. Top with whipped cream.",
+        "servings": 6,
+        "totalTime": 30,
+        "imageUrl": "strawberryShortcake.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Caramel Pecan Brownies",
+        "description": "Decadent brownies with a swirl of caramel and a topping of pecans.",
+        "ingredients": [
+            {
+                "name": "Butter"
+            },
+            {
+                "name": "Chocolate"
+            },
+            {
+                "name": "Sugar"
+            },
+            {
+                "name": "Eggs"
+            },
+            {
+                "name": "Flour"
+            },
+            {
+                "name": "Caramel sauce"
+            },
+            {
+                "name": "Pecans"
+            },
+            {
+                "name": "Salt"
+            }
+        ],
+        "instructions": "Melt chocolate and butter. Mix with sugar, eggs, and flour. Swirl in caramel and top with pecans. Bake until done.",
+        "servings": 12,
+        "totalTime": 50,
+        "imageUrl": "caramelPecanBrownies.png",
+        "group": "Desserts"
+    },
+    {
+        "title": "Grilled Chicken Salad",
+        "description": "A healthy and delicious salad with grilled chicken breast, fresh vegetables, and a tangy vinaigrette.",
+        "ingredients": [
+            {
+                "name": "Chicken breast"
+            },
+            {
+                "name": "Lettuce"
+            },
+            {
+                "name": "Tomatoes"
+            },
+            {
+                "name": "Cucumbers"
+            },
+            {
+                "name": "Red onion"
+            },
+            {
+                "name": "Feta cheese"
+            },
+            {
+                "name": "Olive oil"
+            },
+            {
+                "name": "Lemon juice"
+            },
+            {
+                "name": "Salt"
+            },
+            {
+                "name": "Pepper"
+            }
+        ],
+        "instructions": "Grill chicken breast until cooked. Slice into strips. Toss lettuce, tomatoes, cucumbers, red onion, and feta cheese. Whisk olive oil, lemon juice, salt, and pepper for dressing. Drizzle over salad and top with grilled chicken.",
+        "servings": 4,
+        "totalTime": 30,
+        "imageUrl": "grilledChickenSalad.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Spaghetti Carbonara",
+        "description": "A classic Italian pasta dish with creamy egg and cheese sauce, pancetta, and black pepper.",
+        "ingredients": [
+            {
+                "name": "Spaghetti"
+            },
+            {
+                "name": "Eggs"
+            },
+            {
+                "name": "Pancetta"
+            },
+            {
+                "name": "Parmesan cheese"
+            },
+            {
+                "name": "Black pepper"
+            }
+        ],
+        "instructions": "Cook spaghetti until al dente. In a separate pan, sauté pancetta until crispy. Whisk eggs, Parmesan cheese, and black pepper in a bowl. Drain pasta and toss with egg mixture. Add pancetta and serve.",
+        "servings": 4,
+        "totalTime": 20,
+        "imageUrl": "spaghettiCarbonara.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Grilled Salmon with Asparagus",
+        "description": "A flavorful dish featuring grilled salmon fillets and roasted asparagus spears seasoned with herbs and lemon.",
+        "ingredients": [
+            {
+                "name": "Salmon fillets"
+            },
+            {
+                "name": "Asparagus"
+            },
+            {
+                "name": "Olive oil"
+            },
+            {
+                "name": "Lemon"
+            },
+            {
+                "name": "Garlic"
+            },
+            {
+                "name": "Dill"
+            },
+            {
+                "name": "Salt"
+            },
+            {
+                "name": "Pepper"
+            }
+        ],
+        "instructions": "Season salmon with olive oil, lemon juice, garlic, dill, salt, and pepper. Grill salmon until cooked. Toss asparagus with olive oil, salt, and pepper. Roast in the oven until tender. Serve together.",
+        "servings": 2,
+        "totalTime": 25,
+        "imageUrl": "grilledsalmonwithAsparagus.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Vegetable Stir-Fry",
+        "description": "A quick and colorful stir-fry with a variety of fresh vegetables and a savory sauce.",
+        "ingredients": [
+            {
+                "name": "Broccoli"
+            },
+            {
+                "name": "Bell peppers"
+            },
+            {
+                "name": "Carrots"
+            },
+            {
+                "name": "Snap peas"
+            },
+            {
+                "name": "Mushrooms"
+            },
+            {
+                "name": "Soy sauce"
+            },
+            {
+                "name": "Sesame oil"
+            },
+            {
+                "name": "Ginger"
+            },
+            {
+                "name": "Garlic"
+            },
+            {
+                "name": "Rice"
+            }
+        ],
+        "instructions": "Stir-fry vegetables in sesame oil with ginger and garlic until tender. Add soy sauce. Serve over cooked rice.",
+        "servings": 4,
+        "totalTime": 20,
+        "imageUrl": "vegetableStir-Fry.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Beef Tacos",
+        "description": "Tasty beef tacos with seasoned ground beef, lettuce, tomatoes, cheese, and salsa in soft tortillas.",
+        "ingredients": [
+            {
+                "name": "Ground beef"
+            },
+            {
+                "name": "Taco seasoning"
+            },
+            {
+                "name": "Lettuce"
+            },
+            {
+                "name": "Tomatoes"
+            },
+            {
+                "name": "Cheddar cheese"
+            },
+            {
+                "name": "Salsa"
+            },
+            {
+                "name": "Tortillas"
+            },
+            {
+                "name": "Sour cream"
+            }
+        ],
+        "instructions": "Cook ground beef with taco seasoning. Warm tortillas. Fill with beef, lettuce, tomatoes, cheese, salsa, and sour cream.",
+        "servings": 4,
+        "totalTime": 25,
+        "imageUrl": "beefTacos.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Chicken Alfredo",
+        "description": "Creamy chicken Alfredo pasta with tender chicken breast, fettuccine, and a rich Alfredo sauce.",
+        "ingredients": [
+            {
+                "name": "Chicken breast"
+            },
+            {
+                "name": "Fettuccine"
+            },
+            {
+                "name": "Heavy cream"
+            },
+            {
+                "name": "Butter"
+            },
+            {
+                "name": "Parmesan cheese"
+            },
+            {
+                "name": "Garlic"
+            },
+            {
+                "name": "Salt"
+            },
+            {
+                "name": "Pepper"
+            }
+        ],
+        "instructions": "Season chicken with salt and pepper. Cook until no longer pink. Cook fettuccine. In a separate pan, melt butter and sauté garlic. Add heavy cream and Parmesan cheese. Toss pasta and chicken in the sauce.",
+        "servings": 4,
+        "totalTime": 35,
+        "imageUrl": "chickenAlfredo.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Mushroom Risotto",
+        "description": "Creamy mushroom risotto with Arborio rice, mushrooms, onions, and Parmesan cheese.",
+        "ingredients": [
+            {
+                "name": "Arborio rice"
+            },
+            {
+                "name": "Mushrooms"
+            },
+            {
+                "name": "Onion"
+            },
+            {
+                "name": "White wine"
+            },
+            {
+                "name": "Chicken broth"
+            },
+            {
+                "name": "Parmesan cheese"
+            },
+            {
+                "name": "Butter"
+            },
+            {
+                "name": "Olive oil"
+            },
+            {
+                "name": "Salt"
+            },
+            {
+                "name": "Pepper"
+            }
+        ],
+        "instructions": "Sauté mushrooms and onions in olive oil. Add Arborio rice and cook briefly. Deglaze with white wine. Gradually add chicken broth while stirring. Finish with Parmesan cheese and butter.",
+        "servings": 4,
+        "totalTime": 40,
+        "imageUrl": "mushroomRisotto.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Baked Salmon with Lemon-Dill Sauce",
+        "description": "Oven-baked salmon fillets with a zesty lemon-dill sauce.",
+        "ingredients": [
+            {
+                "name": "Salmon fillets"
+            },
+            {
+                "name": "Lemon"
+            },
+            {
+                "name": "Dill"
+            },
+            {
+                "name": "Greek yogurt"
+            },
+            {
+                "name": "Olive oil"
+            },
+            {
+                "name": "Garlic"
+            },
+            {
+                "name": "Salt"
+            },
+            {
+                "name": "Pepper"
+            }
+        ],
+        "instructions": "Season salmon with olive oil, lemon juice, dill, salt, and pepper. Bake in the oven. Mix Greek yogurt, lemon juice, garlic, and dill for the sauce. Serve over salmon.",
+        "servings": 2,
+        "totalTime": 30,
+        "imageUrl": "bakedSalmon withLemon-DillSauce.png",
+        "group": "Meal"
+    },
+    {
+        "title": "Vegetable Lasagna",
+        "description": "A comforting vegetarian lasagna with layers of pasta, ricotta cheese, spinach, and marinara sauce.",
+        "ingredients": [
+            {
+                "name": "Lasagna noodles"
+            },
+            {
+                "name": "Ricotta cheese"
+            },
+            {
+                "name": "Spinach"
+            },
+            {
+                "name": "Marinara sauce"
+            },
+            {
+                "name": "Mozzarella cheese"
+            },
+            {
+                "name": "Parmesan cheese"
+            },
+            {
+                "name": "Egg"
+            },
+            {
+                "name": "Salt"
+            },
+            {
+                "name": "Pepper"
+            }
+        ],
+        "instructions": "Cook lasagna noodles. Mix ricotta cheese, spinach, egg, salt, and pepper. Layer noodles with marinara sauce, ricotta mixture, and mozzarella cheese. Bake until bubbly and golden.",
+        "servings": 6,
+        "totalTime": 60,
+        "imageUrl": "bakedSalmon withLemon-DillSauce.png",
+        "group": "Meal"
     }
 ]
+
