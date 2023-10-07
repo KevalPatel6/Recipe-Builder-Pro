@@ -9,8 +9,9 @@ import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreatedRecipes.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-ReactDOM.createRoot(document.getElementById('root')).render([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -24,23 +25,26 @@ ReactDOM.createRoot(document.getElementById('root')).render([
         path: '/recipes',
         element: <AllRecipes />
       },
-      // {
-      //   path: '/loginAndSignup',
-      //   element: <Login />
-      // },
-      // {
-      //   path: '/profile/:profileId',
-      //   element: <Profile />
-      // },
-      // {
-      //   path: '/profile/:profileId/myrecipes',
-      //   element: <MyRecipes />
-      // },
-      // {
-      //   path: '/profile/:profileId/createrecipe',
-      //   element: <CreateRecipe />
-      // }
+      {
+        path: '/loginAndSignup',
+        element: <Login />
+      },
+      {
+        path: '/profile/:profileId',
+        element: <Profile />
+      },
+      {
+        path: '/profile/:profileId/myrecipes',
+        element: <MyRecipes />
+      },
+      {
+        path: '/profile/:profileId/createrecipe',
+        element: <CreateRecipe />
+      }
     ]
   }
-]
+])
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
 )

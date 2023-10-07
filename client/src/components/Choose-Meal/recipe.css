@@ -1,34 +1,58 @@
-.card-container{
-    display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  margin: 0 auto;
-  width: 80%;
-  padding: 3%;
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  margin: 30px;
+  padding: 15px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
-.card {
-    width: 256px;
-    height: 418px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #f0f0f0;
-    box-sizing: border-box;
+.recipe-block {
+  position: relative;
+}
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin: 0 auto;
-    width: 80%;
-    padding: 3%;
-  }
-  .recipeImg {
-    width: 233px;
-    height: 191px;
-    border-radius: 12px;
-    background-image: url(./image.png);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+.save-icon {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
+.recipe-img {
+  max-width: 100%;
+  margin-right: 20px;
+}
+
+.card-body {
+  padding-top: 10px;
+  margin: 20px 0;
+  flex: 1;
+}
+
+
+h3 {
+  margin: 0;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.details {
+  flex-grow: 1;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

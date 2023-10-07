@@ -1,5 +1,4 @@
 import './recipe.css';
-import { useState } from 'react'
 
 
 const Recipe = ({
@@ -16,17 +15,20 @@ const Recipe = ({
     const image = `/recipe-Imgs/${imageUrl}`;
 
     return (
-
-        <div className="card" style={{ margin: 30 }}>
+        <div className="card">
             {showTitle && <h3>{title}</h3>}
-            <img className="recipeImg" src={image} alt={title} />
-            <div className="card mb-3">
+            <div className='recipe-block'>
+                <img className="recipe-img" src={image} alt={title} />
+                <img className='save-icon' src="/public/icons/saved.png" alt="save"></img>
+            </div>
+            <div className="card-body">
                 <h6>Servings {servings}</h6>
                 <h5>Cook time:{totalTime}</h5>
                 <div>{instructions}</div>
-                <button> save</button>
-                <img src="{}" alt="save"></img>
             </div>
+            <button className='save-btn'>
+                save
+            </button>
         </div>
     );
 
