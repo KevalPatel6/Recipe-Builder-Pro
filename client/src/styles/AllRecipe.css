@@ -1,3 +1,9 @@
+/* Add basic styling */
+body {
+    /* background-image: url('../../src/assets/images/cooking-rotated.jpg');  */
+    background-image: none;
+    background-size: cover;
+}
 
 .header-container {
     display: grid;
@@ -12,20 +18,12 @@
     padding: 0;
 }
 
-/* Add basic styling */
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('../images/cooking-rotated.jpg'); /* Set your desired background image */
-    background-size: cover;
-    /* transform: rotate(180deg); Rotate the background image by 180 degrees */
-}
-
 /* ingredient cards */
-h1{
-    color: white;
+h1 {
+    color: #000;
 }
 
-#searcContainer{
+#searcContainer {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -63,6 +61,7 @@ h1{
     cursor: pointer;
     margin-left: 5px;
 }
+
 .container {
     display: flex;
     flex-direction: column;

@@ -4,7 +4,7 @@ import '../styles/home.css';
 const Home = () => {
     return (
         <div className="home-container">
-            {/* <div id="searchContainer" className="container">
+            <div id="searchContainer" className="container">
 
             </div>
 
@@ -12,7 +12,7 @@ const Home = () => {
                 <h1>Welcome</h1>
                 <p>Let's whip up something together with what you've got on hand!</p>
                 <p>To get started, lets Login</p>
-            </div> */}
+            </div>
         </div>
     )
 }

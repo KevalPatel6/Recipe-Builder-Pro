@@ -6,9 +6,11 @@
   width: 250px;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 }
 
 .recipe-block {
+  margin-top: 10px;
   position: relative;
 }
 

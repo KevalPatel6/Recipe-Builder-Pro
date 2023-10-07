@@ -1,6 +1,5 @@
 import './recipe.css';
 
-
 const Recipe = ({
     recipe,
     showTitle = true
