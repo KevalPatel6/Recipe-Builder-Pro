@@ -26,7 +26,7 @@ const AllRecipes = () => {
             </div>
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {
-                    return <Recipe recipe={r}></Recipe>
+                    return <Recipe key={r.title} recipe={r}></Recipe>
                 })}
             </div>
         </main>

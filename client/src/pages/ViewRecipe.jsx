@@ -2,19 +2,18 @@ import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { GET_RECIPE } from "../utils/queries";
 import "../styles/viewRecipe.css";
+import { useState } from "react";
 
 const ViewRecipe = () => {
     const { recipeId } = useParams();
-
+    const [recipe, setRecipe] = useState(null)
 
     const { loading, data } = useQuery(GET_RECIPE, {
         variables: { recipeId: recipeId },
-        onCompleted: (data) => {
-            // Handle the data here if needed
+        onCompleted: ({ getRecipe }) => {
+            setRecipe(getRecipe)
         }
     });
-
-    const recipe = data?.recipe || {};
 
     if (loading) {
         return (
@@ -25,11 +24,19 @@ const ViewRecipe = () => {
         );
     }
 
+    if (!recipe) {
+        return (
+            <div>
+                No recipe found
+            </div>
+        );
+    }
+    const {title} = recipe;
 
     return (
         <>
             <div className="left-half">
-                <h1>Left Half</h1>
+                <h1>{title}</h1>
                 {/* <img className="recipe-img" src={image} alt={title} /> */}
 
             </div>
@@ -51,7 +58,7 @@ const ViewRecipe = () => {
                 </div>
 
             </div>
-                     <div className="clearfix">
+            <div className="clearfix">
 
             </div>
         </>

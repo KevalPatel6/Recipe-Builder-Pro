@@ -17,9 +17,8 @@ import ChooseMeal from './pages/LookForRecipe/ChooseMeal.jsx'
 import SeeMeals from './components/Choose-Meal/Meals.jsx'
 import SeeDesserts from './components/Choose-Meal/Desserts.jsx'
 import SeeDrinks from './components/Choose-Meal/Drinks.jsx'
+// import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 // import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AllRecipes from './pages/AllRecipes.jsx'
 import Recipe from './components/Choose-Meal/Recipe.jsx'
 
 const router = createBrowserRouter([
@@ -37,12 +36,8 @@ const router = createBrowserRouter([
         element: <AllRecipes />
       },
       {
-        path: '/recipe',
+        path: '/recipe/:recipeId',
         element: <ViewRecipe/>
-      },
-      {
-        path: '/recipes/:recipeId',
-        element: <Recipe />
       },
       {
         path: '/loginAndSignup',
@@ -59,7 +54,7 @@ const router = createBrowserRouter([
       {
         path: '/profile/:profileId/createrecipe',
         element: <CreateRecipe />
-      }
+      },
       // {
       //   path: '/profile/:profileId/createrecipe',
       //   element: <CreateRecipe />

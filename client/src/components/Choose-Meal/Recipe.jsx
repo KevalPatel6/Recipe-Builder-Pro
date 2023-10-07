@@ -13,6 +13,7 @@ const Recipe = ({
         totalTime, instructions, imageUrl, group } = recipe;
 
     const image = `/recipe-Imgs/${imageUrl}`;
+    const recipeUrl = `/recipe/${_id}`;
 
     return (
         <div className="card">
@@ -28,12 +29,11 @@ const Recipe = ({
                 <h5>Prep time:{totalTime}</h5>
                 <div>{instructions}</div>
             </div>
-            <a href="/" target="_blank" className='view-btn'>
+            <a href={recipeUrl} target="_blank" className='view-btn'>
                 <Button className='view-btn'>View Recipe</Button>
             </a>
         </div>
     );
-
 };
 
 export default Recipe;
