@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { Form, Button, Alert } from 'react-bootstrap';
 import './recipe.css';
 
 const Recipe = ({
@@ -18,16 +20,18 @@ const Recipe = ({
             {showTitle && <h3>{title}</h3>}
             <div className='recipe-block'>
                 <img className="recipe-img" src={image} alt={title} />
-                <img className='save-icon' src="/public/icons/saved.png" alt="save"></img>
+                {/* <img className='save-icon' src="/public/icons/saved.png" alt="save"></img> */}
+                <img className='save-icon' src="/icons/saved.png" alt="save"></img>
+
             </div>
             <div className="card-body">
                 <h6>Servings {servings}</h6>
-                <h5>Cook time:{totalTime}</h5>
+                <h5>Prep time:{totalTime}</h5>
                 <div>{instructions}</div>
             </div>
-            <button className='save-btn'>
-                save
-            </button>
+            <a href="/" target="_blank" className='view-btn'>
+                <Button className='view-btn'>View Recipe</Button>
+            </a>
         </div>
     );
 

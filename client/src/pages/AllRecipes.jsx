@@ -15,14 +15,14 @@ const AllRecipes = () => {
 
     if (loading) {
         return <div>
-            <img src="../assets/spinner.gif" alt="Spinning Loading Symbol" />
+            <img src="../../src/assets/gifs/spinner.gif" alt="Spinning Loading Symbol" />
         </div>
     }
 
     return (
         <main>
             <div>
-                <h1 className="title-headers">All Recipes</h1>
+                <h1 className="title-headers"  style={{ 'color': 'white' }}>All Recipes</h1>
             </div>
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {

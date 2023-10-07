@@ -1,7 +1,6 @@
 /* Add basic styling */
 body {
-    /* background-image: url('../../src/assets/images/cooking-rotated.jpg');  */
-    background-image: none;
+    background-image: url('../../src/assets/background-Imgs/recipes.png');
     background-size: cover;
 }
 

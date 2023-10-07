@@ -25,6 +25,7 @@
 .recipe-img {
   max-width: 100%;
   margin-right: 20px;
+  border-radius: 12px;
 }
 
 .card-body {
@@ -47,12 +48,13 @@ h3 {
   flex-grow: 1;
 }
 
-button {
+.view-btn {
   background-color: #007bff;
   color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  text-align: center;
 }
 
 button:hover {
