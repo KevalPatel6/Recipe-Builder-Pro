@@ -1,6 +1,8 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-function Pantry() {
+function Ingredients() {
     return (
         <div className="header-container">
             <div id="searchContainer" className="container">
@@ -17,9 +19,14 @@ function Pantry() {
 
                 </div>
             </div>
+            <div>
+                <Link to="/Choose-Meal">
+                    <button>Choose a Meal</button>
+                </Link>
+            </div>
         </div>
 
     )
 }
 
-export default Pantry;
+export default Ingredients;

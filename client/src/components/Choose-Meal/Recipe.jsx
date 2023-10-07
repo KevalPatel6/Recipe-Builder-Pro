@@ -9,7 +9,6 @@ const Recipe = ({
     if (!recipe) {
         return;
     }
-
     const { _id, title, description, ingredients, servings,
         totalTime, instructions, imageUrl, group } = recipe;
 
