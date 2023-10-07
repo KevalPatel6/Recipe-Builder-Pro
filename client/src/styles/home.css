@@ -1,6 +1,6 @@
 .home-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 3fr 1fr;
     grid-template-rows: 1fr;
     /* Use 1fr to take up the full vertical space */
     align-items: center;
