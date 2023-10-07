@@ -4,30 +4,30 @@ import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ALL_RECIPES } from "../utils/queries"
 
 const AllRecipes = () => {
-    const [recipes, setAllRecipes] = useState([]);
+    // const [recipes, setAllRecipes] = useState([]);
 
-    const { loading, data } = useQuery(QUERY_ALL_RECIPES, {
-        onCompleted: () => {
-            setAllRecipes(data?.getAllRecipes);
-        }
-    });
+    // const { loading, data } = useQuery(QUERY_ALL_RECIPES, {
+    //     onCompleted: () => {
+    //         setAllRecipes(data?.getAllRecipes);
+    //     }
+    // });
 
-    if (loading) {
-        return <div>
-            <img src="../assets/spinner.gif" alt="Spinning Loading Symbol" />
-        </div>
-    }
+    // if (loading) {
+    //     return <div>
+    //         <img src="../assets/spinner.gif" alt="Spinning Loading Symbol" />
+    //     </div>
+    // }
 
     return (
         <main style={{ background: 'white' }}>
             <div>
                 <h1 className="title-headers">All Recipes</h1>
             </div>
-            <div>
+            {/* <div>
                 {recipes.map(r => {
                     return <Recipe recipe={r}></Recipe>
                 })}
-            </div>
+            </div> */}
         </main>
     )
 }

@@ -2,7 +2,6 @@ import '../../styles/Login.css'
 import {useState} from 'react'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
-import '../../styles/Login.css'
 
 import Auth from '../../utils/auth';
 

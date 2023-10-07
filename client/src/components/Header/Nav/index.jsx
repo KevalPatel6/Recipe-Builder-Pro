@@ -10,7 +10,7 @@ function Nav() {
     
     return (
         <div className="nav-container" style={{ background: 'black' }}>
-            <nav>
+            {/* <nav>
                 <ul>
                     <Link to={'/'}>
                         <li>Home</li>
@@ -27,9 +27,9 @@ function Nav() {
                         <li>All Recipes</li>
                         </Link>
                         </>
-                        )}
+                        )} */}
                         {/*If logged in, get profile of the user and display that. If not, show the Login button */}
-                        {Auth.loggedIn() ? (
+                        {/* {Auth.loggedIn() ? (
                             <>
                                 <Link id="username" to={"/me"}>
                                     <li>{loading ? `Loading` : data.me.username}</li>
@@ -46,7 +46,7 @@ function Nav() {
                             </>
                             )}
                 </ul>
-            </nav>
+            </nav> */}
         </div>
     )
 }
