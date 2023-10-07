@@ -23,6 +23,7 @@ const ViewRecipe = () => {
         <main>
             <div>
                 <h1 className="View Recipe">Recipe</h1>
+                <Recipe recipe={recipe}></Recipe>
             </div>
 
         </main>
