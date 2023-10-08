@@ -72,7 +72,7 @@ const typeDefs = `
 
     addIngredient( ingredientData: InputIngredient): Ingredient
 
-    addIngredientToUser( name: String, group: String): User
+    addIngredientToUser( name: String): User
     
     saveRecipes(recipeId: ID!): User
 

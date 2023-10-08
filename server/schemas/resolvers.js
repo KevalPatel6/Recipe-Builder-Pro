@@ -91,12 +91,12 @@ const resolvers = {
             throw AuthenticationError;
         },
 
-        addIngredientToUser: async (parent, { name, group }, context) => {
-            // if (context.user) {
+        addIngredientToUser: async (parent, { name }, context) => {
+            if (context.user) 
             console.log("hit on frontEnd")
             try {
 
-                const ingredient = await Ingredient.create({ name, group });
+                const ingredient = await Ingredient.create({ name });
                 // const ingredientId = ingredient._id.toString();
                 console.log(ingredient)
                 console.log(context.user)
@@ -111,7 +111,7 @@ const resolvers = {
             }catch (error) {
                 console.log(error)
             }
-            // throw AuthenticationError;
+             throw AuthenticationError;
         },
 
         saveRecipes: async (parent, { recipeId }, context) => {

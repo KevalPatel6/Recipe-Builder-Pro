@@ -8,7 +8,6 @@ import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
 import EnterIngredient from './pages/LookForRecipe/EnterIngredients.jsx'
-import ChooseType from './pages/LookForRecipe/ChooseType.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
 import CreateRecipe from './components/MyRecipes/CreateRecipes.jsx'
 import Meals from'./components/Choose-Meal/Meals.jsx'
@@ -53,10 +52,6 @@ const router = createBrowserRouter([
       {
         path: '/profile/enterIngredient',
         element: <EnterIngredient/>
-      },
-      {
-        path: '/profile/chooseType',
-        element: <ChooseType/>
       },
       {
         path: '/profile/Meals',

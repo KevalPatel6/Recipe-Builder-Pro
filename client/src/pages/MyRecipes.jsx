@@ -3,7 +3,7 @@ import CreatedRecipes from '../components/MyRecipes/CreatedRecipes'
 import {useQuery} from '@apollo/client'
 
 import { QUERY_ME } from "../utils/queries"
-import {useQuery} from "@apollo/client"
+
 import { useParams } from "react-router"
 import { graphql } from "graphql"
 
