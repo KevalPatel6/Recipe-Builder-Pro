@@ -26,6 +26,18 @@ const AddIngredients = () => {
         }
     }
 
+    function addIngredient(event){
+        const value = event.target.id
+        
+        setSelected([
+            value,
+            ...selected
+        ]
+        )
+        console.log(selected)
+    }
+
+
     if(loading){
         return <h2>Still Loading Please Wait</h2>
     }
@@ -36,7 +48,7 @@ const AddIngredients = () => {
     return(
         <>
         <h2>Add Ingredients:</h2>
-                    <form className="addIngredients-form">
+                    <form className={CreateNewRecipeStyles.addIngredients-form}>
                         <input 
                             title="Type in ingredients to add to this recipe" 
                             autocomplete="on" 
@@ -50,7 +62,10 @@ const AddIngredients = () => {
                             onChange={changeHandler}
                             />
                         {suggestions.map(suggestion=>{
-                            return <div>{suggestion.name}</div> 
+                            return <div 
+                            onClick={addIngredient}
+                            id = {suggestion.name}
+                            >{suggestion.name}</div> 
                         })}
 
                     </form>
@@ -61,9 +76,11 @@ const AddIngredients = () => {
                     <div className="container-for-ingredients">
                         {/* <!-- Create a list of ingredients that were selected --> */}
                         ***List of Ingredients goes here***
+                        <br/>
+                        <br/>
                         {selected.map(ingredient=>{
                             return(
-                                <button>{ingredient.name}</button>
+                                <button>{ingredient}</button>
                             )
                         })}
                     
