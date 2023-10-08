@@ -3,6 +3,9 @@ import { useQuery } from "@apollo/client";
 import { GET_RECIPE } from "../utils/queries";
 import "../styles/viewRecipe.css";
 import { useState } from "react";
+import "../assets/background-Imgs/viewPage.png";
+import { devDebug } from "@apollo/client/invariantErrorCodes";
+// import {Nav} from 'react-router-dom'
 
 const ViewRecipe = () => {
     const { recipeId } = useParams();
@@ -31,30 +34,42 @@ const ViewRecipe = () => {
             </div>
         );
     }
-    const {title} = recipe;
+
+    // const {title} = recipe;
+    const { _id, title, description, ingredients, servings,
+        totalTime, instructions, imageUrl, group } = recipe;
+    const image = `/recipe-Imgs/${imageUrl}`;
 
     return (
         <>
-            <div className="left-half">
-                <h1>{title}</h1>
-                {/* <img className="recipe-img" src={image} alt={title} /> */}
+            <div className="left-half" style={{ 'background': 'viewPage' }}>
+
+                <img className="viewRecipe-img" src={image} alt={title} />
 
             </div>
-            <div className="right-half">
-                <h1>Right f</h1>
-                {/* <h1>{title}</h1>
-                <h3>{ingredients}</h3>
-                <p> {instructions}</p> */}
+            <div className="right-half" >
+                <h1 style={{ 'color': 'white' }}>{title}</h1>
+                <h6>Servings {servings}</h6>
+                <h5>Prep time:{totalTime}</h5>
 
-                <h1>Strawberry pastry</h1>
-                <ul>
-                    <li>
-                        ingredients
-                    </li>
-                </ul>
+                <div style={{ 'color': 'white' }}>
+                    {ingredients.map((i) => {
+                        // debugger
+                        const value = i.__typename
+                        debugger
+                        return (
+                            <li key={i._id}
+                                value={value}>
+                                {value}
+                            </li>
+                        );
+                    })}
+                </div>
+
+                {/* <div>{ingredients}</div> */}
                 <div >
                     <h4>Instructions:</h4>
-                    <p className="instructions"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quod harum itaque nesciunt at ab, dolor sequi eum quidem totam eveniet impedit. Natus a eligendi eos sequi voluptatem dignissimos esse.</p>
+                    <p className="instructions"> {instructions}</p>
                 </div>
 
             </div>

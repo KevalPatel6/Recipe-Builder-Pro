@@ -22,7 +22,7 @@ const AllRecipes = () => {
     return (
         <main>
             <div>
-                <h1 className="title-headers"  style={{ 'color': 'white' }}>All Recipes</h1>
+                <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
             </div>
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {
