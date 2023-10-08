@@ -11,7 +11,6 @@ const LoginForm = () => {
     //FormState is the values the user is inputing into the Login Form//
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error }] = useMutation(LOGIN_USER);
-    const navigate = useNavigate()
 
     //Handling changes to the form//
     const handleChange = (event) => {
