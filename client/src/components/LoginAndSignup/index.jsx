@@ -1,4 +1,4 @@
-import '../../styles/Login.css'
+import '../../styles/login.css'
 import {useState} from 'react'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
