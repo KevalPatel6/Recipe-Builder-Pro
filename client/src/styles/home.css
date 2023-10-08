@@ -1,6 +1,6 @@
 .home-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 3fr 1fr;
     grid-template-rows: 1fr;
     /* Use 1fr to take up the full vertical space */
     align-items: center;
@@ -19,12 +19,11 @@
 /* Add basic styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../assets/images/cooking-rotated.jpg');
     /* Set your desired background image */
+    background-image: url('../assets/images/cooking-rotated.jpg');
     background-size: cover;
     /* transform: rotate(180deg); Rotate the background image by 180 degrees */
 }
-
 
 a {
     text-decoration: none;

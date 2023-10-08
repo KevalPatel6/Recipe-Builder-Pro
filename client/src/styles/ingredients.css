@@ -1,14 +1,12 @@
-/* Add basic styling */
-body {
-    background-image: url('../../src/assets/background-Imgs/recipes.png');
-    background-size: cover;
-}
 
 .header-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
 }
+
+
+
 
 /* Header */
 /* Reset default margin and padding */
@@ -17,12 +15,20 @@ body {
     padding: 0;
 }
 
-/* ingredient cards */
-h1 {
-    color: #000;
+/* Add basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/cooking-rotated.jpg'); /* Set your desired background image */
+    background-size: cover;
+    /* transform: rotate(180deg); Rotate the background image by 180 degrees */
 }
 
-#searcContainer {
+/* ingredient cards */
+h1{
+    color: white;
+}
+
+#searcContainer{
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -60,7 +66,6 @@ h1 {
     cursor: pointer;
     margin-left: 5px;
 }
-
 .container {
     display: flex;
     flex-direction: column;
