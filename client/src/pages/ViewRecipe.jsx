@@ -54,8 +54,8 @@ const ViewRecipe = () => {
 
                 <div style={{ 'color': 'white' }}>
                     {ingredients.map((i) => {
-                        // debugger
-                        const value = i.__typename
+                        debugger
+                        const value = i.name
                         debugger
                         return (
                             <li key={i._id}
