@@ -16,8 +16,15 @@ import Desserts from'./components/Choose-Meal/Desserts.jsx'
 
 
 // import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
+import Ingredients from './pages/LookForRecipe/Ingredients.jsx'
+import ChooseMeal from './pages/LookForRecipe/ChooseMeal.jsx'
+import SeeMeals from './components/Choose-Meal/Meals.jsx'
+import SeeDesserts from './components/Choose-Meal/Desserts.jsx'
+import SeeDrinks from './components/Choose-Meal/Drinks.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import AllRecipes from './pages/AllRecipes.jsx'
+import Recipe from './components/Choose-Meal/Recipe.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/recipes',
         element: <AllRecipes />
+      },
+      {
+        path: '/recipes/:recipeId',
+        element: <Recipe />
       },
       {
         path: '/loginAndSignup',
@@ -66,9 +77,29 @@ const router = createBrowserRouter([
         element: <Desserts/>
       },
       // {
-      //   path: '/me/createrecipe',
+      //   path: '/profile/:profileId/createrecipe',
       //   element: <CreateRecipe />
-      // }
+      // },
+      {
+        path: '/ingredients',
+        element: <Ingredients />
+      },
+      {
+        path: '/Choose-Meal',
+        element: <ChooseMeal />
+      },
+      {
+        path: '/meals',
+        element: <SeeMeals />
+      },
+      {
+        path: '/desserts',
+        element: <SeeDesserts />
+      },
+      {
+        path: '/drinks',
+        element: <SeeDrinks />
+      },
     ]
   }
 ]
