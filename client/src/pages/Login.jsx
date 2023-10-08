@@ -1,10 +1,6 @@
-
-
-
-
 import {useState} from 'react'
-import LoginForm from '../components/LoginAndSignup/LoginForm'
-import SignupForm from '../components/LoginAndSignup/SignupForm'
+import LoginForm from '../components/LoginAndSignup/LoginForm.jsx'
+import SignupForm from '../components/LoginAndSignup/SignupForm.jsx'
 
 const Login = () => {
     const [activeTab, setActiveTab] = useState('Login')
