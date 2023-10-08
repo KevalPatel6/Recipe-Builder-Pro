@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "vite.config.js",
+  "proxy":"http//localhost:3001",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
