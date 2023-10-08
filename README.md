@@ -1,6 +1,6 @@
 
 [mit]
-# RECIPE BUILDER PRO 
+# Kitchen Wizard
 
 ## Project Description
 
