@@ -40,10 +40,10 @@ function CreateNewRecipe()  {
     const handleChange = (event) => {
         const {name, value} = event.target
         
-        setFormData(
+        setFormData({
             ...formData,
-            [name: value]
-        )
+            [name]: value
+        })
     }
 
     return (
@@ -57,9 +57,17 @@ function CreateNewRecipe()  {
 
                 <div className="right-side">
                     {/* <!-- Need to add value for the input--> */}
-                    <input title="Input a Name for Your Recipe" autocomplete="on" maxlength="64" type="text"
-                        pattern="[A-Za-z0-9\s\-]{4,128}" name={} placeholder="Enter Recipe Name" required
-                        className="recipeName" value={formData.title}
+                    <input 
+                        title="Input a Name for Your Recipe" 
+                        autocomplete="on" 
+                        maxlength="64"          
+                        type="text"
+                        pattern="[A-Za-z0-9\s\-]{4,128}" 
+                        name='title' 
+                        value={formData.title}
+                        placeholder="Enter Recipe Name"
+                        required
+                        className="recipeName" 
                         onChange={handleChange}/>
                         
                         <AddIngredients ingredients = {formData.ingredients}/>
