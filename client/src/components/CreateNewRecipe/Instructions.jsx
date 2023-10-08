@@ -8,7 +8,7 @@ const Instructions = () => {
             <h2>Instructions</h2>
 
             <textarea cols="50" maxlength="4096" name="instructions"
-                placeholder="Add instructions to your Recipe" wrap="soft" id="instructions" required>
+                placeholder="Add instructions to your Recipe" wrap="soft" className="instructions" required>
             </textarea>
 
         </>

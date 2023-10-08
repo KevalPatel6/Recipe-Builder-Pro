@@ -4,38 +4,47 @@ import Instructions from '../components/CreateNewRecipe/Instructions'
 import { useState } from 'react'
 import {useMutation} from 'react-router-dome'
 
-import '../styles/CreateRecipe.css'
+import createNewRecipeStyles from './CreatedRecipeStyles.module.css'
 
 function CreateNewRecipe()  {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
-        ingredients: '',
+        ingredients: [],
         instructions: '',
         servings: '',
         totalTime: '',
+        imageUrl: '',
         group: ''
     })
 
     const createRecipe = ()=>{
         const {data} = useMutation(ADD_RECIPE,{
-            variables: {...formData                                         }
+            variables: {...formData}
          })
          
         // Reset the form//
          setFormData({
         title: '',
         description: '',
-        ingredients: '',
+        ingredients: [],
         instructions: '',
         servings: '',
         totalTime: '',
+        imageUrl: '',
         group: ''
          })
         
     }
 
-
+    const handleChange = (event) => {
+        const {name, value} = event.target
+        
+        setFormData(
+            ...formData,
+            [name: value]
+        )
+    }
 
     return (
         <main>
@@ -43,27 +52,27 @@ function CreateNewRecipe()  {
 
 
                 <div className="left-side">
-                    <ImageUploader/>
+                    <ImageUploader image={formData.imageUrl}/>
                 </div>
 
                 <div className="right-side">
                     {/* <!-- Need to add value for the input--> */}
                     <input title="Input a Name for Your Recipe" autocomplete="on" maxlength="64" type="text"
-                        pattern="[A-Za-z0-9\s\-]{4,128}" name="recipeName" placeholder="Enter Recipe Name" required
-                        id="recipeName" value={formData.title}
-                        onChange={(event)=>setFormData({...formData, title: event.target.value})}/>
+                        pattern="[A-Za-z0-9\s\-]{4,128}" name={} placeholder="Enter Recipe Name" required
+                        className="recipeName" value={formData.title}
+                        onChange={handleChange}/>
                         
-                        <AddIngredients/>
+                        <AddIngredients ingredients = {formData.ingredients}/>
 
                         {/* Need to add description, servings, totalTime, group */}
                     
-                    <div id="instructions-container">
+                    <div className="instructions-container">
                         
-                        <Instructions/>
+                        <Instructions instructions = {formData.instructions}/>
 
                     </div>
 
-                    <button id="btn"
+                    <button className="btn"
                     onClick={()=>createRecipe}>Create Recipe</button>
 
                 </div>

@@ -1,6 +1,7 @@
 import {useQuery} from '@apollo/client'
 import {Link, Navigate} from 'react-router-dom'
 import { QUERY_ME } from '../utils/queries'
+import CreateNewRecipe from './CreateNewRecipe/CreateNewRecipe.jsx'
 
 import Auth from '../utils/auth';
 
