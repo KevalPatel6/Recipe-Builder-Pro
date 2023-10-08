@@ -16,13 +16,13 @@ const Login = () => {
                 <div className='title-container'>
                     <h1 
                     className={activeTab === 'Login' ? 'active btn' : 'btn'}
-                    onClick={(event)=>toggleClass('Login')}>Login</h1>
+                    onClick={()=>toggleClass('Login')}>Login</h1>
 
                     <h1>/</h1>
 
                     <h1 
                     className={activeTab === 'Signup' ? 'active btn' : 'btn'} 
-                    onClick={(event)=>toggleClass('Signup')}>Signup</h1>
+                    onClick={()=>toggleClass('Signup')}>Signup</h1>
                     
                 </div>
                 <div className='form-container'>
