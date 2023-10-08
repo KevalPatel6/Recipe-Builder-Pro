@@ -1,7 +1,7 @@
 
 
 
-const SavedRecipe = ({ recipes }) => {
+const SavedRecipes = ({ recipes }) => {
 
 
     return (

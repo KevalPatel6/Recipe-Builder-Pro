@@ -25,7 +25,7 @@ const Profile = () => {
         </div>
         <div id="recipe-section">
             <div id="create-recipe">
-                <Link to={`/me/createrecipe`}>
+                <Link to={`/me/createnewrecipe`}>
                 <img id='create' src="" alt=""/>
                 <h1 className="recipe-header">Create new Recipe</h1>
                 </Link>

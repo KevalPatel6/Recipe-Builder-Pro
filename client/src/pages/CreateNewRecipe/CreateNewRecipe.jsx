@@ -1,10 +1,10 @@
-import AddIngredients from '../components/CreateNewRecipe/AddIngredients'
-import ImageUploader from '../components/CreateNewRecipe/ImageUploader'
-import Instructions from '../components/CreateNewRecipe/Instructions'
+import AddIngredients from '../../components/CreateNewRecipe/AddIngredients'
+import ImageUploader from '../../components/CreateNewRecipe/ImageUploader'
+import Instructions from '../../components/CreateNewRecipe/Instructions'
 import { useState } from 'react'
-import {useMutation} from 'react-router-dome'
+import {useMutation} from '@apollo/client'
 
-import createNewRecipeStyles from './CreatedRecipeStyles.module.css'
+// import createNewRecipeStyles from './CreateRecipeStyles.module.css'
 
 function CreateNewRecipe()  {
     const [formData, setFormData] = useState({

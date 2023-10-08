@@ -1,4 +1,4 @@
-import '../styles/CreateRecipe.css'
+// import '../styles/CreateRecipe.css'
 
 
 const ImageUploader = () => {
@@ -11,7 +11,7 @@ const ImageUploader = () => {
             {/* <!-- Container to for 'Add Image' and Icon --> */}
             <div className="add-header-container">
                 <h3 className="upload-image">Add image for your Recipe</h3>
-                <button className="upload-image" onClick={}>
+                <button className="upload-image" >
                     {/* <!-- This is the icon to add an image --> */}
                     <img className="upload-image plus-sign" src="./assets/plus-icon.png" alt="Plus icon"
                         width="20px" />

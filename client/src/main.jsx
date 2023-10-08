@@ -7,12 +7,7 @@ import Login from './pages/Login.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
-<<<<<<< HEAD
 import CreateNewRecipe from './pages/CreateNewRecipe/CreateNewRecipe.jsx'
-import AllRecipes from './pages/AllRecipes.jsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-=======
-import CreateRecipe from './components/MyRecipes/CreatedRecipes.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
 import ViewRecipe from './pages/ViewRecipe.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -25,7 +20,6 @@ import SeeDrinks from './components/Choose-Meal/Drinks.jsx'
 // import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 // import './index.css'
 import Recipe from './components/Choose-Meal/Recipe.jsx'
->>>>>>> 9238e13cf19bd4e279be5e0c986cb1b9c1d75d23
 
 const router = createBrowserRouter([
   {
@@ -50,21 +44,16 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: '/profile/:profileId',
+        path: '/me',
         element: <Profile />
       },
       {
-        path: '/profile/:profileId/myrecipes',
+        path: '/me/myrecipes',
         element: <MyRecipes />
       },
       {
-<<<<<<< HEAD
         path: '/me/createnewrecipe',
         element: <CreateNewRecipe />
-      }
-=======
-        path: '/profile/:profileId/createrecipe',
-        element: <CreateRecipe />
       },
       // {
       //   path: '/profile/:profileId/createrecipe',
@@ -90,7 +79,6 @@ const router = createBrowserRouter([
         path: '/drinks',
         element: <SeeDrinks />
       },
->>>>>>> 9238e13cf19bd4e279be5e0c986cb1b9c1d75d23
     ]
   }
 ])

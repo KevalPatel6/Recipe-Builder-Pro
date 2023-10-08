@@ -1,4 +1,4 @@
-import '../styles/CreateRecipe.css'
+// import '../styles/CreateRecipe.css'
 
 
 const Instructions = () => {
