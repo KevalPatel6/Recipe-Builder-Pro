@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import {useMutation} from '@apollo/client'
 import { SAVE_RECIPE } from "../../utils/mutations";
+import { QUERY_ME } from '../../utils/queries';
 import { Form, Button, Alert } from 'react-bootstrap';
 import './recipe.css';
 
 const Recipe = ({
     recipe,
-    showTitle = true
+    showTitle = true,
+    saved
 }) => {
     if (!recipe) {
         return;
@@ -17,7 +19,11 @@ const Recipe = ({
     const image = `/recipe-Imgs/${imageUrl}`;
     const recipeUrl = `/recipe/${_id}`;
 
-    const [saveRecipes, {error, data}] = useMutation(SAVE_RECIPE)
+    const [saveRecipes, {error, data}] = useMutation(SAVE_RECIPE,
+        {
+            refetchQueries: [QUERY_ME]
+        })
+
 
     function saveRecipe(event){
         let saveRecipeId = event.target.getAttribute('data-id')
@@ -27,7 +33,6 @@ const Recipe = ({
                 recipeId: saveRecipeId
             }
         })
-
     }
 
     return (
@@ -36,7 +41,9 @@ const Recipe = ({
             <div className='recipe-block'>
                 <img className="recipe-img" src={image} alt={title}/>
                 {/* <img className='save-icon' src="/public/icons/saved.png" alt="save"></img> */}
-                <img className='save-icon' src="/icons/saved.png" alt="save" onClick={saveRecipe} data-id={_id}></img>
+                {saved ? null
+                : <img className='save-icon' src="/icons/saved.png" alt="save" onClick={saveRecipe} data-id={_id}></img>
+            }
 
             </div>
             <div className="card-body">
