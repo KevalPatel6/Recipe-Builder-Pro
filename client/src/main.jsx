@@ -44,19 +44,19 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: '/profile/:profileId',
+        path: '/me',
         element: <Profile />
       },
       {
-        path: '/profile/:profileId/myrecipes',
+        path: '/me/myrecipes',
         element: <MyRecipes />
       },
       {
-        path: '/profile/:profileId/createrecipe',
+        path: '/me/createrecipe',
         element: <CreateRecipe />
       },
       // {
-      //   path: '/profile/:profileId/createrecipe',
+      //   path: '/me/createrecipe',
       //   element: <CreateRecipe />
       // },
       {
