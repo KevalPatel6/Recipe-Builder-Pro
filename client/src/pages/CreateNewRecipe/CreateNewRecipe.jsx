@@ -53,7 +53,7 @@ function CreateNewRecipe() {
 
     return (
         <main>
-            <div className="container-for-both-sides">
+            <div className="container-for-both-sides" style={{background: 'white'}}>
 
                 {/* Image Upload */}
                 <div className="left-side">
@@ -63,7 +63,7 @@ function CreateNewRecipe() {
 
                 {/* Description */}
                 <div className="description-container">
-                    <label for="description">Description:</label>
+                    <label htmlFor="description">Description:</label>
                     <input
                         title="Enter the Servings this Recipe Makes"
                         className="description"
@@ -81,7 +81,7 @@ function CreateNewRecipe() {
 
                     {/*Group */}
                     <div className="group-container">
-                        <label for="group">Type of Recipe:</label>
+                        <label htmlFor="group">Type of Recipe:</label>
                         <select
                             onChange={handleChange}
                             name='group'
@@ -97,7 +97,7 @@ function CreateNewRecipe() {
 
                     {/* Time */}
                     <div>
-                        <label for='totalTime'>Total Time:</label>
+                        <label htmlFor='totalTime'>Total Time:</label>
                         <input
                             className="totalTime"
                             type="number"
@@ -111,7 +111,7 @@ function CreateNewRecipe() {
 
                     {/* Servings */}
                     <div className="servings-container">
-                        <label for="servings">Number of Servings:</label>
+                        <label htmlFor="servings">Number of Servings:</label>
                         <input
                             title="Enter the Servings this Recipe Makes"
                             className="servings"
@@ -127,10 +127,10 @@ function CreateNewRecipe() {
                     {/* Recipe Name */}
                     <div className='recipeName-container'>
 
-                        <label for="recipeName">Recipe Name:</label>
+                        <label htmlFor="recipeName">Recipe Name:</label>
                         <input
                             title="Input a Name for Your Recipe"
-                            autocomplete="on"
+                            autoComplete="on"
                             maxLength="64"
                             type="text"
                             pattern="[A-Za-z0-9\s\-]{4,128}"
@@ -148,7 +148,7 @@ function CreateNewRecipe() {
 
                         <h2>Instructions</h2>
 
-                        <textarea cols="50" maxlength="4096" name="instructions"
+                        <textarea cols="50" maxLength="4096" name="instructions"
                             placeholder="Add instructions to your Recipe" wrap="soft" className="instructions" required
                             value={formData.instructions}
                             onChange={handleChange}>

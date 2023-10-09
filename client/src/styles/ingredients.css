@@ -1,12 +1,8 @@
-
 .header-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
 }
-
-
-
 
 /* Header */
 /* Reset default margin and padding */
@@ -18,17 +14,18 @@
 /* Add basic styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../images/cooking-rotated.jpg'); /* Set your desired background image */
+    background-image: url('../images/cooking-rotated.jpg');
+    /* Set your desired background image */
     background-size: cover;
     /* transform: rotate(180deg); Rotate the background image by 180 degrees */
 }
 
 /* ingredient cards */
-h1{
+h1 {
     color: white;
 }
 
-#searcContainer{
+#searchContainer {
     display: grid;
     grid-template-columns: 1fr;
 }
@@ -38,6 +35,20 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    color: white;
+    min-height: 50px;
+    width: 100%;
+    padding: 20px;
+}
+
+.ingredientPill {
+    background: purple;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    padding: 20px 10px;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 .ingredient-card {
@@ -66,6 +77,7 @@ h1{
     cursor: pointer;
     margin-left: 5px;
 }
+
 .container {
     display: flex;
     flex-direction: column;
