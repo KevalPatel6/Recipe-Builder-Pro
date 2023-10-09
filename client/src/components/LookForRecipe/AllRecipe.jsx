@@ -9,11 +9,11 @@ import { GET_RECIPES } from "./graphql/queries"; // Replace with your actual que
 function AllRecipe() {
   const { loading, error, data } = useQuery(GET_RECIPES);
 
-  if (error) return <p>Error: {error.message}</p>;
-  
-  const recipes = data.recipes;
-  
   if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  const recipes = data.recipes;
+
   return (
     <div className="recipe-container">
       {recipes.map((recipe, index) => (
