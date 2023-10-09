@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <CreateNewRecipe />
       },
       // {
-      //   path: '/profile/:profileId/createrecipe',
+      //   path: '/me/createrecipe',
       //   element: <CreateRecipe />
       // },
       {
