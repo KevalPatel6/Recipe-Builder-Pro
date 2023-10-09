@@ -126,7 +126,7 @@ const resolvers = {
                     imageUrl,
                     group
 
-                });
+                })
             
                 const updatedUser = await User.findOneAndUpdate(
                  
@@ -140,7 +140,7 @@ const resolvers = {
                     }
                 ).populate("savedRecipes");
 
-                return newRecipe;
+                return await newRecipe.populate("ingredients");;
             }
             throw AuthenticationError;
 

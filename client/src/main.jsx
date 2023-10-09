@@ -7,7 +7,7 @@ import Login from './pages/Login.jsx'
 import Error from './pages/Error.jsx'
 import Profile from './pages/Profile.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
-import CreateRecipe from './components/MyRecipes/CreatedRecipes.jsx'
+import CreateNewRecipe from './pages/CreateNewRecipe/CreateNewRecipe.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
 import ViewRecipe from './pages/ViewRecipe.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -44,16 +44,16 @@ const router = createBrowserRouter([
         element: <Login />
       },
       {
-        path: '/profile/:profileId',
+        path: '/me',
         element: <Profile />
       },
       {
-        path: '/profile/:profileId/myrecipes',
+        path: '/me/myrecipes',
         element: <MyRecipes />
       },
       {
-        path: '/profile/:profileId/createrecipe',
-        element: <CreateRecipe />
+        path: '/me/createnewrecipe',
+        element: <CreateNewRecipe />
       },
       // {
       //   path: '/profile/:profileId/createrecipe',

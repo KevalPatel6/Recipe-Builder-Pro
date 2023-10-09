@@ -1,7 +1,7 @@
 
 
 
-const SavedRecipe = ({ recipes }) => {
+const SavedRecipes = ({ recipes }) => {
 
 
     return (
@@ -41,4 +41,4 @@ const SavedRecipe = ({ recipes }) => {
     )
 }
 
-export default SavedRecipe
+export default SavedRecipes
