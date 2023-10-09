@@ -56,3 +56,18 @@ p {
     margin-right: 20px;
     padding-top: 15px;
 }
+
+.startbtn{
+    width: 30%;
+    text-align: center;
+    align-items: center;
+    border: none;
+    border-radius: 5pt;
+    padding: 0.5%;
+    background-color: rgba(53, 49, 49, 0.354);
+    text-decoration: none;
+    color: white;
+    font-size: 15pt;
+
+
+}
