@@ -11,10 +11,11 @@ const Home = () => {
 
             <div id="welcome" style={{ 'color': 'white', 'fontSize': '50px' }}>
                 <h1>Welcome</h1>
-                <p>Let's whip up something together with what you've got on hand!</p>
+                <p>Let's check out What we have available to you now</p>
+                <p>If you would like to specify by ingredients that you may have on hand, please login</p>
             </div>
             <div>
-                <Link to="/ingredients"> 
+                <Link to="/Choose-Meal"> 
                 <button>Start</button>
                 </Link>
             </div>

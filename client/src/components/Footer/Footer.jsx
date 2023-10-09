@@ -1,27 +1,19 @@
 import React from 'react';
+import './Footer.css'; // Import the CSS file
 
 function Footer() {
-    return (
-                <footer className="footer">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <p>&copy; 2023 Recipe Pro Builder</p>
-                            </div>
-                            <div className="col-md-6 text-md-right">
-                                <a
-                                    href="https://github.com/KevalPatel6/Recipe-Builder-Pro"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img src="github-badge.png" alt="GitHub" className="github-badge" />
-                                </a>
-                                <p className="mt-2">MIT License</p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-    )
+  return (
+    <footer className="footer">
+      <div className="container">
+        <p>&copy; 2023 Recipe Pro Builder</p>
+        <div className="footer-links">
+          <a href="https://github.com/KevalPatel6/Recipe-Builder-Pro">GitHub</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
