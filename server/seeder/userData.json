@@ -1,22 +1,22 @@
 [
     {
         "username": "carlos",
-        "email": "carlos@gmai.com",
+        "email": "carlos@gmail.com",
         "password": "test123"
     },
     {
         "username": "keval",
-        "email": "keval@gmai.com",
+        "email": "keval@gmail.com",
         "password": "test123"
     },
     {
         "username": "john",
-        "email": "john@gmai.com",
+        "email": "john@gmail.com",
         "password": "test123"
     },
     {
         "username": "jos",
-        "email": "jocelin@gmai.com",
+        "email": "jocelin@gmail.com",
         "password": "test123"
     }
 ]

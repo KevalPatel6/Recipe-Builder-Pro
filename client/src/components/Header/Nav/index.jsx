@@ -17,7 +17,7 @@ function Nav() {
                     </Link>
                     {Auth.loggedIn() ? (
                         <>
-                        <Link to={'profile/:profileId/myrecipes'}>
+                        <Link to={'/me/myrecipes'}>
                         <li>My Recipes</li>
                         </Link>
                     </>)

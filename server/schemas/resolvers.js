@@ -28,13 +28,13 @@ const resolvers = {
         },
         getRecipe: async (parent, { recipeId }) => {
             console.log(recipeId)
-            let result = await Recipe.findOne({ _id: recipeId });
+            let result = await Recipe.findOne({ _id: recipeId }).populate('ingredients');
             console.log(result)
             return result
         },
 
         getAllRecipes: async (parent, args, context) => {
-            return Recipe.find({});
+            return Recipe.find({}).populate('ingredients');
         },
 
 
@@ -158,7 +158,7 @@ const resolvers = {
                     imageUrl,
                     group
 
-                });
+                })
 
                 const updatedUser = await User.findOneAndUpdate(
 
@@ -172,7 +172,7 @@ const resolvers = {
                     }
                 ).populate("savedRecipes");
 
-                return newRecipe;
+                return await newRecipe.populate("ingredients");;
             }
             throw AuthenticationError;
 

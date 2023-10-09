@@ -4,7 +4,6 @@ import {useQuery} from '@apollo/client'
 
 import { QUERY_ME } from "../utils/queries"
 
-import { useParams } from "react-router"
 import { graphql } from "graphql"
 
 

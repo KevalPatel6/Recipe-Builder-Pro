@@ -19,12 +19,11 @@
 /* Add basic styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('../assets/images/cooking-rotated.jpg');
     /* Set your desired background image */
+    background-image: url('../assets/images/cooking-rotated.jpg');
     background-size: cover;
     /* transform: rotate(180deg); Rotate the background image by 180 degrees */
 }
-
 
 a {
     text-decoration: none;
