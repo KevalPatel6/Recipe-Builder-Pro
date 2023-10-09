@@ -1,0 +1,62 @@
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  margin: 30px;
+  padding: 15px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.recipe-block {
+  margin-top: 10px;
+  position: relative;
+}
+
+.save-icon {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.recipe-img {
+  max-width: 100%;
+  margin-right: 20px;
+  border-radius: 12px;
+}
+
+.card-body {
+  padding-top: 10px;
+  margin: 20px 0;
+  flex: 1;
+}
+
+
+h3 {
+  margin: 0;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.details {
+  flex-grow: 1;
+}
+
+.view-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

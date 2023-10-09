@@ -1,0 +1,44 @@
+/* Apply styles to the left and right halves */
+.left-half,
+.right-half {
+    width: 50%;
+    height: 100vh;
+    /* 100% of the viewport height */
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Add some styling to make it visually distinctive */
+.left-half {
+    /* background-color: #f0f0f0; */
+    background-image: url('../assets/background-Imgs/viewPage.png');
+    background-size: cover;
+    
+}
+
+/* .right-half {
+    background-color: #e0e0e0;
+} */
+
+/* Clear the float to prevent layout issues */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.instructions {
+    background: #f0f0f0;
+    color: black;
+    margin: 1%;
+}
+
+.viewRecipe-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-top: 5%;
+    margin-left: 30%;
+
+}
