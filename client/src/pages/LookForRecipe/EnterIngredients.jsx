@@ -2,70 +2,33 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useMutation, useQuery } from '@apollo/client';
 import { ADD_INGREDIENT_TO_USER } from '../../utils/mutations';
-import { QUERY_ALL_RECIPES } from '../../utils/queries';
+import { QUERY_ALL_RECIPES, QUERY_ME, GET_FILTERED_RECIPES } from '../../utils/queries';
+
 
 // import '../../styles/Login.css'
 
 import Auth from '../../utils/auth';
 
-// const addIngredient = ({userId}) => {}
-function Pantry({user}) {
+
+function Pantry() {
 
   const [ingName, setIngName] = useState('');
   const [ingredients, setIngredients] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   const [addIngredient] = useMutation(ADD_INGREDIENT_TO_USER);
-  const { loading, error, data } = useQuery(QUERY_ALL_RECIPES);
-
-  // const profiles = data?.profiles || [];
-
-  // const { loading, data } = useQuery(QUERY_ALL_RECIPES, {
-  //   variables: { recipes }
-  // }); //filter??
-  // const getAllRecipes = data?.getAllRecipes || [];
-
-  // useEffect(() => {
-  //   if (data && data.getAllRecipes) {
-  //     // Filter recipes based on the user's ingredient IDs
-  //     const filtered = data.getAllRecipes.filter((recipe) =>
-  //       recipe.ingredients.some((ingredient) =>
-  //         user.ingredients.includes(ingredient.id)
-  //       )
-  //     );
-  //     setFilteredRecipes(filtered);
-  //   }
-  // }, [data, user]);
-
-  useEffect(() => {
-    if (data && data.getAllRecipes) {
-      // Populate ingredients for each recipe
-      const populatedRecipes = data.getAllRecipes.map((recipe) => ({
-        ...recipe,
-        ingredients: Recipe.Ingredients.map((ingredient) => {
-          
-          const matchingIngredient = user.ingredient.find(
-            (ingredient) =>
-              ingredient.toString() === ingredient.id.toString()
-          );
-          return matchingIngredient ? matchingIngredient : ingredient;
-        }),
-      }));
-      // Filter recipes based on the user's ingredient IDs
-      const filtered = populatedRecipes.filter((recipe) => {
-        if (recipe.ingredients) {
-          return recipe.ingredients.some((ingredient) =>
-          user.ingredients.includes(ingredient.id)
-          );
-        }
-        return false;
-      });
-      
-      setFilteredRecipes(filtered);
-    }
-    }, [data, user]);
-    
-
+  
+  const { loading, error, data, refetch } = useQuery(GET_FILTERED_RECIPES);
+  const recipes = data?.getFilteredRecipes.recipes || [];
+  const user = data?.getFilteredRecipes.user || {};
+  console.log(recipes)
+  console.log(user)
+  console.log(data?.getFilteredRecipes)
+  
+  
+  
+  
+  
   const handleClick = async (event) => {
     event.preventDefault();
 
@@ -75,11 +38,15 @@ function Pantry({user}) {
         variables: { name: ingName },
       });
       console.log({ data })
-
+      refetch();
+      // check to see if user has ingredients. if so add it to the old ingredients.
+      // if(user?.ingredients.length){
+      //   setIngredients(user.ingredients)
+      // }
       setIngredients([...ingredients, { name: ingName }]);
-
+      
       setIngName('');
-      // setIngGroup('');
+     
     } catch (err) {
       console.error(err);
     }
@@ -89,23 +56,15 @@ function Pantry({user}) {
   const handleGetRecipesClick = async (event) => {
     event.preventDefault();
     try {
-      // take ingredients by their id and cross reference them with recipes in the db
-      // display the recipes that include the users ingredients
-      // const { data } = await seeRecipes({
-      //   variables: {},
-      // });
-      const filtered = data.getAllRecipes.filter((recipe) =>
-      recipe.ingredients.some((ingredient) => user.ingredients.includes(ingredient.id))
-    );
-    setFilteredRecipes(filtered);
-  
-     
+      const filtered = data.getAllRecipes.filter((recipe) => 
+        recipe.ingredients.some((ingredient) => user.ingredients.includes(ingredient.id))
+      );
+      setFilteredRecipes(filtered);
 
     } catch (error) {
 
     }
-
-  }
+  };
 
   return (
     <div className="header-container">
@@ -129,7 +88,7 @@ function Pantry({user}) {
         <div id="ingredientList">
           <h2>Ingredients:</h2>
           <ul>
-            {ingredients.map((ingredient, index) => (
+            {ingredients?.map((ingredient, index) => (
               <li key={index}>
                 {ingredient.name} - {ingredient.group}
               </li>
@@ -140,9 +99,14 @@ function Pantry({user}) {
 
       <h2>Recipes with Specific Ingredients</h2>
       <ul>
-        {filteredRecipes.map((recipe) => (
-          <li key={recipe.id}>{recipe.name}</li>
-        ))}
+        {recipes.length ? (
+          recipes.map((recipe) => (
+            <li key={recipe._id}>{recipe.title}</li>
+          ))
+        ) : ("")
+
+
+        }
       </ul>
     </div>
 

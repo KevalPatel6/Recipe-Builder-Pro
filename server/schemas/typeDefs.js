@@ -47,6 +47,11 @@ const typeDefs = `
     user: User
   }
 
+  type UserRecipes {
+    user: User
+    recipes: [Recipe]
+  }
+
   type Query {
     user: User
     getProfile(username: String!): User
@@ -62,7 +67,7 @@ const typeDefs = `
     getSavedRecipes: User
     getCreatedRecipes(recipeId: ID!): User
     
-    
+    getFilteredRecipes: UserRecipes
   }
 
 

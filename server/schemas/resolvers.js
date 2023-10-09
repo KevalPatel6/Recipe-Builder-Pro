@@ -55,6 +55,14 @@ const resolvers = {
             let result = await User.findOne({ _id: context.user._id }).populate('createdRecipes');
             return result
         },
+
+        getFilteredRecipes: async (parent, args, context) => {
+            let user = await User.findOne({ _id: context.user._id }).populate("ingredients");
+            let recipes = await Recipe.find({ingredients: {$in: user.ingredients} }).populate("ingredients")
+            console.log(recipes);
+            return {user, recipes}
+        },
+
     },
 
 

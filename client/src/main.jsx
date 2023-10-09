@@ -23,7 +23,7 @@ import SeeDesserts from './components/Choose-Meal/Desserts.jsx'
 import SeeDrinks from './components/Choose-Meal/Drinks.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AllRecipes from './pages/AllRecipes.jsx'
+
 import Recipe from './components/Choose-Meal/Recipe.jsx'
 
 const router = createBrowserRouter([
