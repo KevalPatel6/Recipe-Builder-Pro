@@ -1,0 +1,90 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
+.container-for-both-sides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    grid-column-gap: 200px;
+}
+
+.left-side {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+}
+
+.right-side {
+    height: 100%;
+    justify-content: center;
+}
+
+#uploadImage-container {
+    width: 50%;
+}
+
+#recipeImage {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
+#add-header-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
+#plus-sign {
+    border-style: none;
+}
+
+#recipeName {
+    border-style: none;
+    height: 100px;
+    font-size: 24pt;
+}
+
+#addIngredients-form {
+    height: 25px;
+    width: 400px
+}
+
+#searchBar {
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+#instructions-container {
+    width: 100%;
+    height: 400px;
+}
+
+#instructions {
+    align-self: center;
+    font-size: 12pt;
+    height: 80%;
+    overflow-y: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#btn {
+    fill: blue;
+    color: black;
+    border-style: solid;
+    border: 1px;
+    border-color: black;
+    height: 100px; 
+    width: 50%;
+}
