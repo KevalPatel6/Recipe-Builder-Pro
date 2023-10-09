@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Recipe from '../Choose-Meal/Recipe'
 
 
 const SavedRecipes = ({ recipes }) => {
