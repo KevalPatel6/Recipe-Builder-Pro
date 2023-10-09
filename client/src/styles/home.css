@@ -1,12 +1,15 @@
 .home-container {
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr;
     /* Use 1fr to take up the full vertical space */
     align-items: center;
     height: 100vh;
     /* This will make the container take up the full viewport height */
-    background: rgb(0, 0, 0, .6);
+    /* background: rgb(0, 0, 0, .6); */
+    background-image: url('../assets/background-Imgs/32.png');
+    position: fixed;
+
 }
 
 /* Header */
@@ -20,8 +23,7 @@
 body {
     font-family: Arial, sans-serif;
     /* Set your desired background image */
-    background-image: url('../assets/images/cooking-rotated.jpg');
-    background-size: cover;
+    /* position: static; */
     /* transform: rotate(180deg); Rotate the background image by 180 degrees */
 }
 
