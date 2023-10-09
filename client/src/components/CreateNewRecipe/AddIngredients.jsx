@@ -3,7 +3,7 @@ import {useQuery} from '@apollo/client'
 import { GET_ALL_INGREDIENTS } from "../../utils/queries"
 import {useState} from 'react'
 
-const AddIngredients = () => {
+const AddIngredients = ({formData, setFormData}) => {
     const {loading, data} = useQuery(GET_ALL_INGREDIENTS)
 
     const ingredients = data?.getIngredients || []
@@ -14,12 +14,16 @@ const AddIngredients = () => {
     function changeHandler (event) {
         const value = event.target.value.toLowerCase()
         const filter = ingredients.filter(ingredient=>{
-            console.log(ingredient)
+        
             return ingredient?.name?.toLowerCase().includes(value)
         })
         
         if(filter.length===ingredients.length){
             setSuggestions([])
+        }
+        else if(filter.length>15){
+            const filtered = filter.slice(0,15)
+            setSuggestions(filtered)
         }
         else{
             setSuggestions(filter)
@@ -27,14 +31,30 @@ const AddIngredients = () => {
     }
 
     function addIngredient(event){
-        const value = event.target.id
+        const ingredientId = event.target.id
+        const ingredientName = event.target.textContent
         
+        const value = {
+            _id: ingredientId,
+            name: ingredientName
+        }
+
+        const selectedIds = selected.map(ingredient=>{
+            return ingredient._id
+        })
+
         setSelected([
             value,
             ...selected
         ]
         )
-        console.log(selected)
+
+
+        setFormData({
+            ...formData,
+            ingredients: [...selectedIds, ingredientId]
+        })
+        
     }
 
 
@@ -48,7 +68,7 @@ const AddIngredients = () => {
     return(
         <>
         <h2>Add Ingredients:</h2>
-                    <form className={CreateNewRecipeStyles.addIngredients-form}>
+                    <form className='addIngredients-form'>
                         <input 
                             title="Type in ingredients to add to this recipe" 
                             autocomplete="on" 
@@ -58,13 +78,13 @@ const AddIngredients = () => {
                             type="text" 
                             pattern="[A-Za-z\s\-]{2,}" 
                             name="ingredients"
-                            placeholder="Add and Search Ingredients" className="searchBar"
+                            placeholder="Search Ingredients and Click on them to add them to your Recipe" className="searchBar"
                             onChange={changeHandler}
                             />
                         {suggestions.map(suggestion=>{
                             return <div 
                             onClick={addIngredient}
-                            id = {suggestion.name}
+                            id = {suggestion._id}
                             >{suggestion.name}</div> 
                         })}
 
@@ -80,7 +100,7 @@ const AddIngredients = () => {
                         <br/>
                         {selected.map(ingredient=>{
                             return(
-                                <button>{ingredient}</button>
+                                <button>{ingredient.name}</button>
                             )
                         })}
                     
