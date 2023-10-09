@@ -1,9 +1,8 @@
 /* Add basic styling */
-body {
+.allRecipe-container{
     background-image: url('../../src/assets/background-Imgs/recipes.png');
     background-size: cover;
 }
-
 .header-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
