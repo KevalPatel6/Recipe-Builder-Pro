@@ -63,3 +63,21 @@ p {
     font-size: 15pt;
     cursor: pointer;
 }
+
+.enterButton {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    display: grid;
+    background-color: rgb(0, 92, 0);
+    color: white;
+    padding: 15px 30px;
+    margin-right: 90px;
+    border: none;
+    border-radius: 5px;
+    right: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    
+}
