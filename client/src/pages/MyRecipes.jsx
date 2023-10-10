@@ -4,6 +4,8 @@ import {useQuery} from '@apollo/client'
 
 import { QUERY_ME } from "../utils/queries"
 
+import { graphql } from "graphql"
+
 
 const MyRecipes = () => {
     const { loading, data } = useQuery(QUERY_ME)

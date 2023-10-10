@@ -1,13 +1,26 @@
 /* Add basic styling */
-body {
+.allRecipe-container {
     background-image: url('../../src/assets/background-Imgs/recipes.png');
     background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr;
+    max-height: 100vh;
+    overflow-y: auto;;
+    padding: 80px 0;
 }
+
+.allRecipe-container h1 {
+    padding-left: 30px;
+}
+
+/* ingredient cards */
+/* h1 {
+    color: #000;
+} */
 
 .header-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 2fr;
 }
 
 /* Header */
@@ -15,11 +28,6 @@ body {
 * {
     margin: 0;
     padding: 0;
-}
-
-/* ingredient cards */
-h1 {
-    color: #000;
 }
 
 #searcContainer {

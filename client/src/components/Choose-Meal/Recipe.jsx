@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {useMutation} from '@apollo/client'
-import { SAVE_RECIPE } from "../../utils/mutations";
-import { REMOVE_RECIPE } from '../../utils/mutations';
+import { SAVE_RECIPE, REMOVE_RECIPE} from "../../utils/mutations";
 import { QUERY_ME } from '../../utils/queries';
 import { Form, Button, Alert } from 'react-bootstrap';
 import './recipe.css';
@@ -31,11 +30,9 @@ const Recipe = ({
         {
             refetchQueries: [QUERY_ME]
         })
-    
 
-    function saveRecipe(event){
+    function saveRecipe(event) {
         let saveRecipeId = event.target.getAttribute('data-id')
-
         saveRecipes({
             variables: {
                 recipeId: saveRecipeId
@@ -61,7 +58,7 @@ const Recipe = ({
             {showTitle && <h3>{title}</h3>}
             <div className='recipe-block'>
                 <img className="recipe-img" src={image} alt={title}/>
-               
+               {/* If it is saved then show the filled save icon, if not the nthe grey save icon */}
                 {isSaved ?
                 <img className='save-icon' src="/icons/saved.png" alt="save" onClick={deleteRecipe} data-id={_id}></img>
                 : <img className='save-icon' src="/icons/save.png" alt="save" onClick={saveRecipe} data-id={_id}></img>
@@ -76,6 +73,9 @@ const Recipe = ({
             <a href={recipeUrl} target="_blank" className='view-btn'>
                 <Button className='view-btn'>View Recipe</Button>
             </a>
+            <div className='view-btn'>
+                <Button className='view-btn' onClick={removeRec} >Unsave Recipe</Button>
+            </div>
         </div>
     );
 };
