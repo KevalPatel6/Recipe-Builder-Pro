@@ -101,34 +101,3 @@ mutation saveRecipes($recipeId: ID!) {
   }
 }
 `;
-
-//adds ingredientId to User 
-export const ADD_INGREDIENT_TO_USER = gql`
-mutation AddIngredientToUser($name: String) {
-  addIngredientToUser(name: $name) {
-    _id
-    username
-    email
-    savedRecipes {
-      _id
-      title
-      description
-      instructions
-      servings
-      totalTime
-      imageUrl
-      group
-      ingredients {
-        _id
-        name
-        group
-      }
-    }
-    ingredients {
-      _id
-      name
-      group
-    }
-  }
-}
-`;

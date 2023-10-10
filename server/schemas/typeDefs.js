@@ -6,7 +6,6 @@ const typeDefs = `
     password: String!
     savedRecipes: [Recipe]
     createdRecipes: [Recipe]
-    ingredients:[Ingredient]
   }
 
   type Ingredient {
@@ -47,11 +46,6 @@ const typeDefs = `
     user: User
   }
 
-  type UserRecipes {
-    user: User
-    recipes: [Recipe]
-  }
-
   type Query {
     user: User
     getProfile(username: String!): User
@@ -67,7 +61,7 @@ const typeDefs = `
     getSavedRecipes: User
     getCreatedRecipes(recipeId: ID!): User
     
-    getFilteredRecipes: UserRecipes
+    
   }
 
 
@@ -76,9 +70,6 @@ const typeDefs = `
     login(email: String!, password: String!): Auth 
 
     addIngredient( ingredientData: InputIngredient): Ingredient
-
-    addIngredientToUser( name: String): User
-    
     saveRecipes(recipeId: ID!): User
 
     removeRecipe(recipeId: ID!): Recipe

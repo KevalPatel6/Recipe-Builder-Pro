@@ -1,13 +1,7 @@
-import { useState } from 'react';
-import {useNavigate, Link} from 'react-router-dom'
-import { useQuery } from '@apollo/client';
-import { QUERY_RECIPE_GROUP } from '../../utils/queries';
-
-// import '../../styles/Login.css'
-
-import Auth from '../../utils/auth';
 import React from "react";
-
+import { useQuery } from "@apollo/client";
+import { QUERY_RECIPE_GROUP } from "../../utils/queries"; // Import your GraphQL query
+import { Link } from "react-router-dom";
 
 
 function SeeDrinks() {
