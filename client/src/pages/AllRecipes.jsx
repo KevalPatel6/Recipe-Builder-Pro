@@ -3,12 +3,7 @@ import { useState } from "react"
 import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ALL_RECIPES } from "../utils/queries"
 import { QUERY_ME } from "../utils/queries"
-<<<<<<< HEAD
-import '../styles/AllRecipes.css'
-
-=======
 import '../styles/AllRecipes.css';
->>>>>>> 6f1fd7add6af43154596b4b31a1142a6265f6e22
 
 const AllRecipes = () => {
     const [recipes, setAllRecipes] = useState([]);

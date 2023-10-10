@@ -228,7 +228,7 @@ const resolvers = {
 
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { ingredientList: { ingredientId } } },
+                    { $pullAll: { ingredients: [ ingredientId ] } },
                     { new: true, runValidators: true },
                 );
 
