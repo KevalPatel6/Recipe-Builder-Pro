@@ -20,10 +20,8 @@ const AllRecipes = () => {
     }
 
     return (
-        <main>
-            <div className="allRecipe-container">
-                <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
-            </div>
+        <main className="allRecipe-container">
+            <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {
                     return <Recipe key={r.title} recipe={r}></Recipe>
