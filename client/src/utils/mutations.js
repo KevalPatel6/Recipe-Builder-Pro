@@ -61,17 +61,14 @@ export const REMOVE_RECIPE = gql`
 mutation removeRecipe($recipeId: ID!) {
   removeRecipe(recipeId: $recipeId) {
     _id
-    title
-    description
-    instructions
-    servings
-    totalTime
-    imageUrl
-    ingredients {
+    createdRecipes {
       _id
-      group
-      name
     }
+    email
+    savedRecipes {
+      _id
+    }
+    username
   }
 }
 `;
