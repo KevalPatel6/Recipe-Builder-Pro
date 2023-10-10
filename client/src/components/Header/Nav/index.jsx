@@ -3,7 +3,7 @@ import Auth from '../../../utils/auth'
 import { useQuery } from '@apollo/client'
 import { QUERY_ME } from '../../../utils/queries'
 
-import navStyles from './nav.css'
+import  './nav.css'
 
 function Nav() {
     const { loading, data } = useQuery(QUERY_ME)
