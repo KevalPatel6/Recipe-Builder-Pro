@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Categories() {
     return (
         <div className="header-container">
-            <div id="searchContainer" class="container">
+            <div id="searchContainer" className="container">
                 <h1>What are you in the mood for ? </h1>
 
             </div>
