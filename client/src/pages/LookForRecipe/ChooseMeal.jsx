@@ -3,7 +3,7 @@ import Categories from '../../components/LookForRecipe/Categories';
 
 const ChooseMeal = () => {
     return (
-        <div className="home-container">
+        <div>
             <Categories />
         </div>
     )
