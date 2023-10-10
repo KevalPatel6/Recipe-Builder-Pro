@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { QUERY_ME } from '../utils/queries'
-import '../styles/profile.css'
+import '../styles/Profile.css'
 import profile from '../assets/background-Imgs/profile-avatar.png';
 
 const Profile = () => {
