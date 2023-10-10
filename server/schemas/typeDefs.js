@@ -82,7 +82,7 @@ const typeDefs = `
     saveRecipes(recipeId: ID!): User
 
     removeRecipe(recipeId: ID!): User
-    removeIngredient(ingredientId: ID!): Ingredient
+    removeIngredient(ingredientId: ID!): User
     
     addRecipe( 
         title: String,

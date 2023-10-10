@@ -4,11 +4,8 @@ import { useMutation, useQuery } from '@apollo/client';
 import { ADD_INGREDIENT_TO_USER } from '../../utils/mutations';
 import { QUERY_ALL_RECIPES, QUERY_ME, GET_FILTERED_RECIPES } from '../../utils/queries';
 
-
-// import '../../styles/Login.css'
-
 import Auth from '../../utils/auth';
-
+// import './EnterIngredients.css';
 
 function Pantry() {
 
@@ -22,12 +19,8 @@ function Pantry() {
   const recipes = data?.getFilteredRecipes.recipes || [];
   const user = data?.getFilteredRecipes.user || {};
   console.log(recipes)
-  console.log(user)
-  console.log(data?.getFilteredRecipes)
-  
-  
-  
-  
+  // console.log(user)
+  // console.log(data?.getFilteredRecipes)
   
   const handleClick = async (event) => {
     event.preventDefault();
@@ -39,10 +32,6 @@ function Pantry() {
       });
       console.log({ data })
       refetch();
-      // check to see if user has ingredients. if so add it to the old ingredients.
-      // if(user?.ingredients.length){
-      //   setIngredients(user.ingredients)
-      // }
       setIngredients([...ingredients, { name: ingName }]);
       
       setIngName('');
@@ -56,16 +45,18 @@ function Pantry() {
   const handleGetRecipesClick = async (event) => {
     event.preventDefault();
     try {
+      console.log(data.getAllRecipes)
       const filtered = data.getAllRecipes.filter((recipe) => 
-        recipe.ingredients.some((ingredient) => user.ingredients.includes(ingredient.id))
+        recipe.ingredients.some((ingredient) => user.ingredients.includes(ingredient.name))
       );
       setFilteredRecipes(filtered);
-
+      
     } catch (error) {
 
     }
   };
 
+ 
   return (
     <div className="header-container">
       <div id="searchContainer" className="container">
@@ -104,9 +95,9 @@ function Pantry() {
             <li key={recipe._id}>{recipe.title}</li>
           ))
         ) : ("")
-
-
-        }
+        
+        
+      }
       </ul>
     </div>
 
@@ -114,3 +105,7 @@ function Pantry() {
 }
 
 export default Pantry;
+// check to see if user has ingredients. if so add it to the old ingredients.
+// if(user?.ingredients.length){
+//   setIngredients(user.ingredients)
+// }

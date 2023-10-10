@@ -76,11 +76,16 @@ mutation removeRecipe($recipeId: ID!) {
 
 // removes ingredient from user, not the database
 export const REMOVE_INGREDIENT = gql`
-mutation RemoveIngredient($ingredientId: ID!) {
+mutation removeIngredient($ingredientId: ID!) {
   removeIngredient(ingredientId: $ingredientId) {
     _id
-    name
-    group
+    email
+    ingredients {
+      _id
+      group
+      name
+    }
+    username
   }
 }
 `;

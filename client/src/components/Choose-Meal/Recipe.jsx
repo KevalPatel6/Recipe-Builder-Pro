@@ -49,7 +49,6 @@ const Recipe = ({
                 recipeId: removedRecipeId
             }
         })
-
         setIsSaved(false)
     }
 
@@ -80,7 +79,4 @@ const Recipe = ({
     );
 };
 
-export default Recipe;
-
-
-
+export default Recipe
