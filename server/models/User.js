@@ -31,6 +31,12 @@ const userSchema = new Schema({
       ref: 'Recipe',
     },
   ],
+  ingredients: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Ingredient',
+    },
+  ],
 });
 
 userSchema.pre('save', async function (next) {
