@@ -49,6 +49,7 @@ h3 {
 }
 
 .view-btn {
+  margin-top: 5px;
   background-color: #007bff;
   color: #fff;
   border: none;

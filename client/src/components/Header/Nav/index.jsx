@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import Auth from '../../../utils/auth'
 import { useQuery } from '@apollo/client'
 import { QUERY_ME } from '../../../utils/queries'
-
-import  './nav.css'
+import './nav.css'
 
 function Nav() {
     const { loading, data } = useQuery(QUERY_ME)
@@ -11,7 +10,7 @@ function Nav() {
     return (
         <div id="recipe-navbar" className="nav-container">
             <nav>
-                <ul class="navbar-items">
+                <ul className="navbar-items">
                     <Link to={'/'}>
                         <li>Home</li>
                     </Link>
@@ -35,7 +34,6 @@ function Nav() {
                                 <li>{loading ? `Loading` : data.me.username}</li>
                             </Link>
                             <li
-                                className={navStyles.logout}
                                 onClick={() => Auth.logout()}>Logout
                             </li>
                         </>)
