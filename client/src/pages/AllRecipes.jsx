@@ -3,7 +3,7 @@ import { useState } from "react"
 import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ALL_RECIPES } from "../utils/queries"
 import { QUERY_ME } from "../utils/queries"
-import '../styles/AllRecipe.css';
+import '../styles/AllRecipes.css'
 
 
 const AllRecipes = () => {
