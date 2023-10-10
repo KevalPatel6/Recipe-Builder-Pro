@@ -32,7 +32,7 @@ function Nav() {
                         {Auth.loggedIn() ? (
                             <>
                                 <Link id="username" to={"/me"}>
-                                    <li>{loading ? `Loading` : data.me.username}</li>
+                                    <li>{loading ? `Loading` : data?.me?.username}</li>
                                 </Link>
                                 <li 
                                 className = {navStyles.logout}

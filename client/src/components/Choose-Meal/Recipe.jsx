@@ -27,7 +27,7 @@ const Recipe = ({
             refetchQueries: [QUERY_ME]
         })
 
-    const [removeRecipe] = useMutation(REMOVE_RECIPE,
+    const [removeRecipe,{data: removeRecipeData}] = useMutation(REMOVE_RECIPE,
         {
             refetchQueries: [QUERY_ME]
         })
@@ -41,20 +41,19 @@ const Recipe = ({
                 recipeId: saveRecipeId
             }
         })
-        saved = true
-        setIsSaved(saved)
+      
+        setIsSaved(true)
     }
 
     function deleteRecipe(event){
         let removedRecipeId = event.target.getAttribute('data-id')
-        console.log(removedRecipeId)
         removeRecipe({
             variables: {
                 recipeId: removedRecipeId
             }
         })
-        saved = false
-        setIsSaved(saved)
+        
+        setIsSaved(false)
     }
 
     return (
@@ -62,7 +61,7 @@ const Recipe = ({
             {showTitle && <h3>{title}</h3>}
             <div className='recipe-block'>
                 <img className="recipe-img" src={image} alt={title}/>
-                {/* <img className='save-icon' src="/public/icons/saved.png" alt="save"></img> */}
+               
                 {isSaved ?
                 <img className='save-icon' src="/icons/saved.png" alt="save" onClick={deleteRecipe} data-id={_id}></img>
                 : <img className='save-icon' src="/icons/save.png" alt="save" onClick={saveRecipe} data-id={_id}></img>
