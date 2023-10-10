@@ -28,7 +28,7 @@ const AllRecipes = () => {
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {
                     let saved = false
-                    for (let i = 0; i < savedRecipes.length; i++) {
+                    for (let i = 0; i < savedRecipes?.length; i++) {
                         if(savedRecipes[i]._id===r._id){
                             saved = true
                         }
