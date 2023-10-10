@@ -27,6 +27,7 @@ function Pantry() {
   let allRecipes = data?.getAllRecipes
   let eachRecipesIngredients = data?.getAllRecipes.map(recipe=>recipe.ingredients)
 
+  const flattenedIngredients = eachRecipesIngredients.flat()
   // const recipes = data?.recipes || [];
   // const user = data?.getFilteredRecipes.user || {};
 
