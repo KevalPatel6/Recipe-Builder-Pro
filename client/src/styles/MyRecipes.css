@@ -1,0 +1,28 @@
+#my-recipe-page {
+    background-image: url('../../src/assets/background-Imgs/recipes.png');
+    background-size: cover;
+    padding: 50px;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.title-headers,
+.message {
+    color: white;
+}
+
+.message {
+    margin-top: 20px;
+}
+
+.recipe-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.allRecipe-container h1 {
+    padding-left: 30px;
+}

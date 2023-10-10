@@ -1,4 +1,33 @@
-.title-header{
+.bkgrd {
+    background-image: url('../../src/assets/background-Imgs/7.png');
     display: flex;
+    flex-direction: column;
 }
 
+.login-container {
+    background-color: white;
+    padding: 50px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+.title-container .btn {
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.title-container .btn:hover {
+    background: black;
+    color: white;
+}
+
+
+.title-container .active {
+    background: black;
+    color: white;
+}
