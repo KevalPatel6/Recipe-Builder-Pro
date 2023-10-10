@@ -1,4 +1,4 @@
-import CreateNewRecipeStyles from "../../pages/CreateNewRecipe/CreateRecipeStyles.module.css"
+import '../../pages/CreateNewRecipe/createNewRecipe.css'
 import {useQuery} from '@apollo/client'
 import { GET_ALL_INGREDIENTS } from "../../utils/queries"
 import {useState} from 'react'

@@ -1,4 +1,4 @@
-// import '../styles/CreateRecipe.css'
+import '../../pages/CreateNewRecipe/createNewRecipe.css'
 
 
 const ImageUploader = () => {

@@ -59,11 +59,13 @@ const resolvers = {
 
         getFilteredRecipes: async (parent, args, context) => {
             let user = await User.findOne({ _id: context.user._id }).populate("ingredients");
-            let recipes = await Recipe.find({ ingredients: { $in: user.ingredients } }).populate("ingredients")
-            console.log(recipes);
+
+            let recipes = await Recipe.find({
+               "ingredients.name": {$in: user.ingredients}}
+            ).populate("ingredients")
+
             return { user, recipes }
         },
-
     },
 
 
@@ -95,7 +97,6 @@ const resolvers = {
             if (!correctPw) {
                 throw AuthenticationError;
             }
-            console.log(correctPw)
             const token = signToken(user);
 
             return { token, user };

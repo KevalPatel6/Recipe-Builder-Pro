@@ -3,8 +3,7 @@ import ImageUploader from '../../components/CreateNewRecipe/ImageUploader'
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
 import { ADD_RECIPE } from '../../utils/mutations'
-
-// import createNewRecipeStyles from './CreateRecipeStyles.module.css'
+import './createNewRecipe.css'
 
 function CreateNewRecipe() {
     const [formData, setFormData] = useState({

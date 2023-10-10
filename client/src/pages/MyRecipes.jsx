@@ -26,7 +26,7 @@ const MyRecipes = () => {
             </div>
             <div className="recipes-container">
                 {/* If there is user recipes*/}
-                {data.me.createdRecipes.length ?
+                {data?.me?.createdRecipes.length ?
                     <CreatedRecipes recipes={data.me.createdRecipes} />
                     :
                     <div>
@@ -39,7 +39,7 @@ const MyRecipes = () => {
             </div>
             <div className="recipes-container">
                 {/* If there is user recipes*/}
-                {data.me.savedRecipes.length ?
+                {data?.me?.savedRecipes.length ?
                       <SavedRecipes recipes={data.me.savedRecipes}/>
                     :
                     <div>

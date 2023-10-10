@@ -14,11 +14,22 @@ function Pantry() {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   const [addIngredient] = useMutation(ADD_INGREDIENT_TO_USER);
+
+  const {data: userData} = useQuery(QUERY_ME)
+  //Want array of userRecipes
+    let userIngredients = userData?.me?.ingredients
+    console.log(userIngredients)
+
   
-  const { loading, error, data, refetch } = useQuery(GET_FILTERED_RECIPES);
-  const recipes = data?.getFilteredRecipes.recipes || [];
-  const user = data?.getFilteredRecipes.user || {};
-  console.log(recipes)
+  const { loading, error, data, refetch } = useQuery(QUERY_ALL_RECIPES)  ;
+
+  //data.getAllRecipes is array of all recipes
+  let allRecipes = data?.getAllRecipes
+  let eachRecipesIngredients = data?.getAllRecipes.map(recipe=>recipe.ingredients)
+
+  // const recipes = data?.recipes || [];
+  // const user = data?.getFilteredRecipes.user || {};
+
   // console.log(user)
   // console.log(data?.getFilteredRecipes)
   
@@ -26,11 +37,11 @@ function Pantry() {
     event.preventDefault();
 
     try {
-      console.log(ingName)
+  
       const { data } = await addIngredient({
         variables: { name: ingName },
       });
-      console.log({ data })
+
       refetch();
       setIngredients([...ingredients, { name: ingName }]);
       
@@ -45,7 +56,7 @@ function Pantry() {
   const handleGetRecipesClick = async (event) => {
     event.preventDefault();
     try {
-      console.log(data.getAllRecipes)
+      // console.log(data.getAllRecipes)
       const filtered = data.getAllRecipes.filter((recipe) => 
         recipe.ingredients.some((ingredient) => user.ingredients.includes(ingredient.name))
       );
@@ -95,8 +106,6 @@ function Pantry() {
             <li key={recipe._id}>{recipe.title}</li>
           ))
         ) : ("")
-        
-        
       }
       </ul>
     </div>
