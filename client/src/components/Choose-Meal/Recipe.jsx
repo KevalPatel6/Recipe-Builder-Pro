@@ -74,7 +74,7 @@ const Recipe = ({
                 <Button className='view-btn'>View Recipe</Button>
             </a>
             <div className='view-btn'>
-                <Button className='view-btn' onClick={removeRec} >Unsave Recipe</Button>
+                <Button className='view-btn' onClick={removeRecipe} >Unsave Recipe</Button>
             </div>
         </div>
     );

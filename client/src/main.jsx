@@ -9,16 +9,9 @@ import Profile from './pages/Profile.jsx'
 import AllRecipes from './pages/AllRecipes.jsx'
 import EnterIngredient from './pages/LookForRecipe/EnterIngredients.jsx'
 import MyRecipes from './pages/MyRecipes.jsx'
-import CreateRecipe from './components/MyRecipes/CreateRecipes.jsx'
-import Meals from'./components/Choose-Meal/Meals.jsx'
-import Drinks from'./components/Choose-Meal/Drinks.jsx'
-import Desserts from'./components/Choose-Meal/Desserts.jsx'
-
-
 import CreateNewRecipe from './pages/CreateNewRecipe/CreateNewRecipe.jsx'
 import ViewRecipe from './pages/ViewRecipe.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-// import CreateRecipe from './components/MyRecipes/CreateRecipe.jsx'
 import Ingredients from './pages/LookForRecipe/Ingredients.jsx'
 import ChooseMeal from './pages/LookForRecipe/ChooseMeal.jsx'
 import SeeMeals from './components/Choose-Meal/Meals.jsx'
@@ -60,10 +53,10 @@ const router = createBrowserRouter([
         path: '/me/myrecipes',
         element: <MyRecipes />
       },
-      // {
-      //   path: '/me/createrecipe',
-      //   element: <CreateRecipe />
-      // },
+      {
+        path: '/me/createnewrecipe',
+        element: <CreateNewRecipe />
+      },
       {
         path: '/ingredients',
         element: <Ingredients />

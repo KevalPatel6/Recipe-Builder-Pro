@@ -44,23 +44,6 @@ function Nav() {
                             </Link>
                         </>
                         )}
-                        {/*If logged in, get profile of the user and display that. If not, show the Login button */}
-                        {Auth.loggedIn() ? (
-                            <>
-                                <Link id="username" to={"/me"}>
-                                    <li>{loading ? `Loading` : data?.me?.username}</li>
-                                </Link>
-                                <li 
-                                className = {navStyles.logout}
-                                onClick={()=>Auth.logout()}>Logout</li>
-                            </>)
-                            :
-                            (<>
-                                <Link to={'/loginAndSignup'}>
-                                    <li >Login</li>
-                                </Link>
-                            </>
-                            )}
                 </ul>
             </nav>
         </div>
