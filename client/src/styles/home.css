@@ -22,7 +22,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 
     /* 75 accounts for header */
-    height: calc(100vh - 75px);
+    height: calc(100vh - 35px);
     /* This will make the container take up the full viewport height */
     /* background: rgb(0, 0, 0, .6); */
 
