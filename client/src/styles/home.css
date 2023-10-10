@@ -1,14 +1,3 @@
-.home-container {
-    display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
-    grid-template-rows: 1fr;
-    /* Use 1fr to take up the full vertical space */
-    align-items: center;
-    height: 100vh;
-    /* This will make the container take up the full viewport height */
-    background: rgb(0, 0, 0, .6);
-}
-
 /* Header */
 /* Reset default margin and padding */
 * {
@@ -20,31 +9,38 @@
 body {
     font-family: Arial, sans-serif;
     /* Set your desired background image */
-    background-image: url('../assets/images/cooking-rotated.jpg');
-    background-size: cover;
+    /* position: static; */
     /* transform: rotate(180deg); Rotate the background image by 180 degrees */
 }
 
-a {
-    text-decoration: none;
-    color: #fff;
+.nav-container {
+    background: black;
 }
 
-a:hover {
-    color: #008cff;
-    /* Change the color to your desired color */
-    /* You can also add other styles like text-decoration, background-color, etc. */
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    /* 75 accounts for header */
+    height: calc(100vh - 35px);
+    /* This will make the container take up the full viewport height */
+    /* background: rgb(0, 0, 0, .6); */
+
+    /* background: black !important; */
+    background-image: url('../assets/background-Imgs/32.png');
+    position: fixed;
+    background-size: cover;
 }
 
-h1,
-p {
+.home-container h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
     color: white;
+    margin-top: 40%;
 }
 
-h1 {
-    font-size: 3rem;
-    padding: 20px;
-    margin-bottom: 20px;
+.welcome-container {
+    margin-top: 50%;
 }
 
 p {
@@ -52,4 +48,18 @@ p {
     margin-bottom: 20px;
     margin-right: 20px;
     padding-top: 15px;
+    color: #fff;
+}
+
+.startbtn {
+    width: 200px;
+    text-align: center;
+    border: none;
+    border-radius: 5pt;
+    padding: .5rem;
+    background-color: rgba(0, 131, 183);
+    text-decoration: none;
+    color: white;
+    font-size: 15pt;
+    cursor: pointer;
 }

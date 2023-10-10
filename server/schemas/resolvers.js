@@ -59,9 +59,9 @@ const resolvers = {
 
         getFilteredRecipes: async (parent, args, context) => {
             let user = await User.findOne({ _id: context.user._id }).populate("ingredients");
-            let recipes = await Recipe.find({ingredients: {$in: user.ingredients} }).populate("ingredients")
+            let recipes = await Recipe.find({ ingredients: { $in: user.ingredients } }).populate("ingredients")
             console.log(recipes);
-            return {user, recipes}
+            return { user, recipes }
         },
 
     },
@@ -111,8 +111,8 @@ const resolvers = {
         },
 
         addIngredientToUser: async (parent, { name }, context) => {
-            if (context.user) 
-            console.log("hit on frontEnd")
+            if (context.user)
+                console.log("hit on frontEnd")
             try {
 
                 const ingredient = await Ingredient.create({ name });
@@ -127,10 +127,10 @@ const resolvers = {
                 ).populate('savedRecipes').populate("ingredients")
                 console.log(user)
                 return user;
-            }catch (error) {
+            } catch (error) {
                 console.log(error)
             }
-             throw AuthenticationError;
+            throw AuthenticationError;
         },
 
         saveRecipes: async (parent, { recipeId }, context) => {
@@ -208,19 +208,15 @@ const resolvers = {
         },
 
         removeRecipe: async (parent, { recipeId }, context) => {
-
             if (context.user) {
-
-
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedRecipes: { recipeId } } },
+                    { $pullAll: { savedRecipes: [recipeId] } },
                     { new: true, runValidators: true },
                 );
 
                 return updatedUser
             }
-
             throw AuthenticationError;
         },
 

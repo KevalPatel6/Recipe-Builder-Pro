@@ -5,6 +5,7 @@ import { QUERY_ALL_RECIPES } from "../utils/queries"
 import { QUERY_ME } from "../utils/queries"
 import '../styles/AllRecipe.css';
 
+
 const AllRecipes = () => {
     const [recipes, setAllRecipes] = useState([]);
 
@@ -23,10 +24,8 @@ const AllRecipes = () => {
         </div>
     }
     return (
-        <main>
-            <div>
-                <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
-            </div>
+        <main className="allRecipe-container">
+            <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {
                     let saved = false

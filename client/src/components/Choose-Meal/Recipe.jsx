@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {useMutation} from '@apollo/client'
-import { SAVE_RECIPE } from "../../utils/mutations";
-import { REMOVE_RECIPE } from '../../utils/mutations';
+import { SAVE_RECIPE, REMOVE_RECIPE } from "../../utils/mutations";
 import { QUERY_ME } from '../../utils/queries';
 import { Form, Button, Alert } from 'react-bootstrap';
 import './recipe.css';
@@ -31,18 +30,17 @@ const Recipe = ({
         {
             refetchQueries: [QUERY_ME]
         })
-    
+   
 
-    function saveRecipe(event){
+    function saveRecipe(event) {
         let saveRecipeId = event.target.getAttribute('data-id')
-
         saveRecipes({
             variables: {
                 recipeId: saveRecipeId
             }
         })
-        saved = true
-        setIsSaved(saved)
+     
+        setIsSaved(true)
     }
 
     function deleteRecipe(event){
@@ -53,15 +51,15 @@ const Recipe = ({
                 recipeId: removedRecipeId
             }
         })
-        saved = false
-        setIsSaved(saved)
+    
+        setIsSaved(false)
     }
 
     return (
         <div className="card">
             {showTitle && <h3>{title}</h3>}
             <div className='recipe-block'>
-                <img className="recipe-img" src={image} alt={title}/>
+                <img className="recipe-img" src={image} alt={title} />
                 {/* <img className='save-icon' src="/public/icons/saved.png" alt="save"></img> */}
                 {isSaved ?
                 <img className='save-icon' src="/icons/saved.png" alt="save" onClick={deleteRecipe} data-id={_id}></img>
@@ -77,11 +75,11 @@ const Recipe = ({
             <a href={recipeUrl} target="_blank" className='view-btn'>
                 <Button className='view-btn'>View Recipe</Button>
             </a>
+            <div className='view-btn'>
+                <Button className='view-btn' onClick={removeRec} >Unsave Recipe</Button>
+            </div>
         </div>
     );
 };
 
-export default Recipe;
-
-
-
+export default Recipe

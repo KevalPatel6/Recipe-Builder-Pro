@@ -1,0 +1,41 @@
+#title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 20px;
+    border-radius: 5px;
+    background: black;
+}
+
+#recipe-navbar {
+    background-color: rgb(0, 92, 0);
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar-items a,
+li {
+    margin-right: 10px;
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-items a:hover,
+li:hover {
+    color: blue
+}
