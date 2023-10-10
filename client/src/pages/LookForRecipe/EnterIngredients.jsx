@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
 import { useMutation, useQuery } from '@apollo/client';
-import { ADD_INGREDIENT_TO_USER } from '../../utils/mutations';
-import { QUERY_ALL_RECIPES, QUERY_ME, GET_FILTERED_RECIPES } from '../../utils/queries';
 import _ from 'lodash';
-
-import Auth from '../../utils/auth';
-import AllRecipes from '../AllRecipes';
-// import './EnterIngredients.css';
+import { useEffect, useState } from 'react';
+import { ADD_INGREDIENT_TO_USER } from '../../utils/mutations';
+import { QUERY_ALL_RECIPES, QUERY_ME } from '../../utils/queries';
+import "../../styles/EnterIngredients.css";
+import { Link } from 'react-router-dom';
 
 function Pantry() {
   //State Variables//
@@ -90,59 +87,58 @@ function Pantry() {
     }
   };
 
-
   useEffect(()=>{
     console.log(filteredRecipes);
     console.log(ingredients)
   },[filteredRecipes], [ingredients])
 
-
   return (
     <div className="header-container">
-      <div id="searchContainer" className="container">
-        <div>
-          <h1>Search for Ingredients</h1>
-          <input type="text" id="ingredientInput" placeholder="Enter ingredient"
-            value={ingName}
-            onChange={(event) => setIngName(event.target.value)} />
+      <div id="searchContainer">
+          <div id="title-row">
+            <h1>Search for Ingredients</h1>
 
+            <Link to="/Choose-Meal" className="see-all-recipe-btn">
+              <button>See All Recipes</button>
+            </Link>
+          </div>
+          <div className="add-ingredient">
+            <input type="text" id="ingredientInput" placeholder="Enter ingredient"
+              value={ingName}
+              onChange={(event) => setIngName(event.target.value)} />
 
-
-          <button onClick={handleClick} >Add</button>
-          <button onClick={handleMatchRecipe} >Get Recipes</button>
-
-        </div>
-
+            <button className="ingredient-action" onClick={handleClick} >Add</button>
+            <button className="ingredient-action" onClick={handleMatchRecipe} >Get Recipes</button>
+          </div>
       </div>
-
-      <div>
+      <div id="result-row">
         <div id="ingredientList">
           <h2>Ingredients:</h2>
-          <ul>
+          <ul id="user-ingredient-list">
             {userIngredients?.length ? (
               userIngredients.map((ingredient, index) => (
-
-                <li style={{color: 'red'}} key={index}>
-                {ingredient.name} - {ingredient.group}
-              </li>
+                <li className="result-item" key={index}>
+                  {ingredient.name} - {ingredient.group}
+                </li>
                 ))
             ) : ("")
             }
           </ul>
         </div>
+
+        <div id="recipeList">
+          <h2>Recipes with Specific Ingredients</h2>
+          <ul>
+            {filteredRecipes?.length ? (
+              filteredRecipes.map((recipe) => (
+                <li className="result-item" key={recipe._id}>{recipe.title }</li>
+                ))
+                ) : ("")
+              }
+          </ul>
+        </div>
       </div>
-
-      <h2>Recipes with Specific Ingredients</h2>
-      <ul>
-        {filteredRecipes?.length ? (
-          filteredRecipes.map((recipe) => (
-            <li style={{color: 'red'}} key={recipe._id}>{recipe.title }</li>
-          ))
-        ) : ("")
-        }
-      </ul>
     </div>
-
   )
 }
 

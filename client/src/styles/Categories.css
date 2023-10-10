@@ -13,9 +13,9 @@
 
 #categories-title {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     color: white;
     font-size: 2rem;
     text-align: center;

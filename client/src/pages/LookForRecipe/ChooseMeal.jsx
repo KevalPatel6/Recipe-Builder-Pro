@@ -7,7 +7,6 @@ const ChooseMeal = () => {
     return (
         <div>
             <Categories />
-            <Link to="/EnterIngredients"><button className="enterButton">What's in your kitchen?</button></Link>
         </div>
     )
 }
