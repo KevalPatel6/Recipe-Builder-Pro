@@ -12,13 +12,28 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_ME = gql`
- query Me {
+query Me {
   me {
     _id
     username
     email
     password
+    ingredients {
+      _id
+      name
+      group
+    }
     savedRecipes {
+      _id
+      title
+      description
+      instructions
+      servings
+      totalTime
+      imageUrl
+      group
+    }
+    createdRecipes {
       _id
       title
       description
@@ -32,9 +47,6 @@ export const QUERY_ME = gql`
       totalTime
       imageUrl
       group
-    }
-    createdRecipes {
-      _id
     }
   }
 }
@@ -112,6 +124,11 @@ query GetAllRecipes {
     totalTime
     imageUrl
     group
+    ingredients {
+      _id
+      name
+      group
+    }
   }
 }
 `;
@@ -170,6 +187,38 @@ query GetCreatedRecipes($recipeId: ID!) {
       _id
       title
       description
+      instructions
+      servings
+      totalTime
+      imageUrl
+      group
+    }
+  }
+}
+`;
+
+export const GET_FILTERED_RECIPES = gql`
+query getFilteredRecipes {
+  getFilteredRecipes {
+    user {
+      _id
+      username
+      email
+      ingredients {
+        _id
+        name
+        group
+      }
+    }
+    recipes {
+      _id
+      title
+      description
+      ingredients {
+        _id
+        name
+        group
+      }
       instructions
       servings
       totalTime
