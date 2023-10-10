@@ -1,5 +1,4 @@
-
-
+import Recipe from '../Choose-Meal/Recipe'
 
 const CreatedRecipes = ({ recipes }) => {
 

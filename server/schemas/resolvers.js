@@ -1,5 +1,6 @@
 const { User, Ingredient, Recipe } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
+const { GraphQLError } = require('graphql');
 
 const resolvers = {
     Query: {
@@ -68,9 +69,19 @@ const resolvers = {
 
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
-            const token = signToken(user);
-            return { token, user };
+            try{
+
+                const user = await User.create({ username, email, password });
+                const token = signToken(user);
+                return { token, user };
+            }
+            catch{
+                throw new GraphQLError('Username or Email is already in Use!', {
+                    extensions: {
+                      code: 'UNAUTHENTICATED',
+                    },
+                  })
+            }
         },
 
         login: async (parent, { email, password }) => {
@@ -199,6 +210,7 @@ const resolvers = {
         removeRecipe: async (parent, { recipeId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
+                  
                     { _id: context.user._id },
                     { $pullAll: { savedRecipes: [recipeId] } },
                     { new: true, runValidators: true },
