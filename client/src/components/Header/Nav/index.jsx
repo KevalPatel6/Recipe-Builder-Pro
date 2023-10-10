@@ -1,50 +1,51 @@
 import { Link } from 'react-router-dom';
 import Auth from '../../../utils/auth'
-import {useQuery} from '@apollo/client'
-import {QUERY_ME} from '../../../utils/queries'
+import { useQuery } from '@apollo/client'
+import { QUERY_ME } from '../../../utils/queries'
 
-import navStyles from './Nav.module.css'
+import  './nav.css'
 
 function Nav() {
-    const {loading, data} = useQuery(QUERY_ME)
-    
+    const { loading, data } = useQuery(QUERY_ME)
+
     return (
-        <div className="nav-container" style={{ background: 'black' }}>
+        <div id="recipe-navbar" className="nav-container">
             <nav>
-                <ul>
+                <ul class="navbar-items">
                     <Link to={'/'}>
                         <li>Home</li>
                     </Link>
                     {Auth.loggedIn() ? (
                         <>
-                        <Link to={'/me/myrecipes'}>
-                        <li>My Recipes</li>
-                        </Link>
-                    </>)
+                            <Link to={'/me/myrecipes'}>
+                                <li>My Recipes</li>
+                            </Link>
+                        </>)
                         :
                         (<>
-                         <Link to={'/recipes'}>
-                        <li>All Recipes</li>
-                        </Link>
+                            <Link to={'/recipes'}>
+                                <li>All Recipes</li>
+                            </Link>
                         </>
                         )}
-                        {/*If logged in, get profile of the user and display that. If not, show the Login button */}
-                        {Auth.loggedIn() ? (
-                            <>
-                                <Link id="username" to={"/me"}>
-                                    <li>{loading ? `Loading` : data.me.username}</li>
-                                </Link>
-                                <li 
-                                className = {navStyles.logout}
-                                onClick={()=>Auth.logout()}>Logout</li>
-                            </>)
-                            :
-                            (<>
-                                <Link to={'/loginAndSignup'}>
-                                    <li >Login</li>
-                                </Link>
-                            </>
-                            )}
+                    {/*If logged in, get profile of the user and display that. If not, show the Login button */}
+                    {Auth.loggedIn() ? (
+                        <>
+                            <Link id="username" to={"/me"}>
+                                <li>{loading ? `Loading` : data.me.username}</li>
+                            </Link>
+                            <li
+                                className={navStyles.logout}
+                                onClick={() => Auth.logout()}>Logout
+                            </li>
+                        </>)
+                        :
+                        (<>
+                            <Link to={'/loginAndSignup'}>
+                                <li >Login</li>
+                            </Link>
+                        </>
+                        )}
                 </ul>
             </nav>
         </div>

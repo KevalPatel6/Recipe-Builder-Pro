@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client"
 import { useState } from "react"
 import Recipe from "../components/Choose-Meal/Recipe"
 import { QUERY_ALL_RECIPES } from "../utils/queries"
-import '../styles/AllRecipe.css';
+import '../styles/AllRecipes.css';
 
 const AllRecipes = () => {
     const [recipes, setAllRecipes] = useState([]);
@@ -20,10 +20,8 @@ const AllRecipes = () => {
     }
 
     return (
-        <main>
-            <div>
-                <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
-            </div>
+        <main className="allRecipe-container">
+            <h1 className="title-headers" style={{ 'color': 'white' }}>All Recipes</h1>
             <div style={{ 'display': 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                 {recipes.map(r => {
                     return <Recipe key={r.title} recipe={r}></Recipe>
