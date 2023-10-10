@@ -10,7 +10,6 @@ const Recipe = ({
     recipe,
     showTitle = true,
     saved,
-    deleted
 }) => {
     if (!recipe) {
         return;
@@ -22,6 +21,7 @@ const Recipe = ({
     const recipeUrl = `/recipe/${_id}`;
 
     const [isSaved, setIsSaved] = useState(saved)
+
     const [saveRecipes, {error, data}] = useMutation(SAVE_RECIPE,
         {
             refetchQueries: [QUERY_ME]
@@ -52,7 +52,7 @@ const Recipe = ({
                 recipeId: removedRecipeId
             }
         })
-        
+
         setIsSaved(false)
     }
 
