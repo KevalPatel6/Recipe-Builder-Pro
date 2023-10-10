@@ -1,32 +1,31 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import LoginForm from '../components/LoginAndSignup/LoginForm.jsx'
 import SignupForm from '../components/LoginAndSignup/SignupForm.jsx'
+import '../styles/login.css';
 
 const Login = () => {
     const [activeTab, setActiveTab] = useState('Login')
 
-    const toggleClass = (tabName) =>{
+    const toggleClass = (tabName) => {
         setActiveTab(tabName)
     }
-    
-    
+
+
     return (
-        <main>
+        <main class="bkgrd">
             <div className='login-container'>
                 <div className='title-container'>
-                    <h1 
-                    className={activeTab === 'Login' ? 'active btn' : 'btn'}
-                    onClick={()=>toggleClass('Login')}>Login</h1>
+                    <button
+                        className={activeTab === 'Login' ? 'active btn' : 'btn'}
+                        onClick={() => toggleClass('Login')}>Login</button>
 
-                    <h1>/</h1>
+                    <button id='signupbtn'
+                        className={activeTab === 'Signup' ? 'active btn' : 'btn'}
+                        onClick={() => toggleClass('Signup')}>Signup</button>
 
-                    <h1 
-                    className={activeTab === 'Signup' ? 'active btn' : 'btn'} 
-                    onClick={()=>toggleClass('Signup')}>Signup</h1>
-                    
                 </div>
                 <div className='form-container'>
-                    {activeTab === 'Login' ? <LoginForm/> : <SignupForm/>}
+                    {activeTab === 'Login' ? <LoginForm /> : <SignupForm />}
                 </div>
             </div>
         </main>

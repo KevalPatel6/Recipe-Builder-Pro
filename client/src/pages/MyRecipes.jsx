@@ -1,11 +1,8 @@
-import SavedRecipes from '../components/MyRecipes/SavedRecipes'
+import { useQuery } from '@apollo/client'
 import CreatedRecipes from '../components/MyRecipes/CreatedRecipes'
-import {useQuery} from '@apollo/client'
-
+import SavedRecipes from '../components/MyRecipes/SavedRecipes'
 import { QUERY_ME } from "../utils/queries"
-
-import { graphql } from "graphql"
-
+import '../styles/MyRecipes.css'
 
 const MyRecipes = () => {
     const { loading, data } = useQuery(QUERY_ME)
@@ -20,34 +17,33 @@ const MyRecipes = () => {
 
 
     return (
-        <main>
-            <div>
+        <main id="my-recipe-page">
+            <div className="recipe-section">
                 <h1 className="title-headers">My Recipes</h1>
+                <div className="recipes-container">
+                    {/* If there is user recipes*/}
+                    {data.me.createdRecipes.length ?
+                        <CreatedRecipes recipes={data.me.createdRecipes} />
+                        :
+                        <div className='message'>
+                            <h3>You have not created any recipes!</h3>
+                        </div>
+                    }
+                </div>
             </div>
-            <div className="recipes-container">
-                {/* If there is user recipes*/}
-                {data.me.createdRecipes.length ?
-                    <CreatedRecipes recipes={data.me.createdRecipes} />
-                    :
-                    <div>
-                        <h3>You have not created any recipes!</h3>
-                    </div>
-                }
-            </div>
-            <div>
+            <div className="recipe-section">
                 <h1 className="title-headers">Saved Recipes</h1>
+                <div className="recipes-container">
+                    {/* If there is user recipes*/}
+                    {data.me.savedRecipes.length ?
+                        <SavedRecipes recipes={data.me.savedRecipes} />
+                        :
+                        <div className='message'>
+                            <h3>You have not saved any recipes!</h3>
+                        </div>
+                    }
+                </div>
             </div>
-            <div className="recipes-container">
-                {/* If there is user recipes*/}
-                {data.me.savedRecipes.length ?
-                      <SavedRecipes recipes={data.me.savedRecipes}/>
-                    :
-                    <div>
-                        <h3>You have not saved any recipes!</h3>
-                    </div>
-                }
-            </div>
-
         </main>
     )
 

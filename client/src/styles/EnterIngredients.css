@@ -1,0 +1,80 @@
+.header-container {
+    /* background-image: url('../assets/background-Imgs/33.png');
+    background-size: cover; */
+    background: black;
+    min-height: 100vh;
+    color: white;
+}
+
+#searchContainer {
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#title-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.see-all-recipe-btn button {
+    color: white;
+    background: rgb(0, 118, 0);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.see-all-recipe-btn {
+    border-radius: 10px;
+}
+
+.see-all-recipe-btn:hover {
+    background: rgb(0, 86, 0);
+}
+
+.add-ingredient {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#ingredientInput {
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.ingredient-action {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background: rgb(0, 96, 145);
+    font-size: 15px;
+    color: white;
+    box-shadow: none;
+    border: 0;
+    cursor: pointer;
+}
+
+#result-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#ingredientList,
+#recipeList {
+    flex: 1;
+}
+
+#user-ingredient-list {
+    color: white;
+}
+
+.result-item {
+    color: white;
+    font-size: 2rem;
+}

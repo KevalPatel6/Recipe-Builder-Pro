@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../utils/mutations';
-
-// import '../../styles/Login.css'
-
+import { useState } from 'react';
 import Auth from '../../utils/auth';
+import { LOGIN_USER } from '../../utils/mutations';
+import "./LoginForm.css";
 
 const LoginForm = () => {
     //FormState is the values the user is inputing into the Login Form//
@@ -49,12 +46,12 @@ const LoginForm = () => {
     return (
         <>
             {/* Login Form */}
-            <div id='form-container'>
-                <form
+            <div id='submit-container'>
+                <form class="login-form"
                     onSubmit={handleFormSubmit}
                     autoComplete='on'>
                     <input
-                        className="form-input"
+                        className="login-form-input"
                         placeholder="Enter your email"
                         name="email"
                         type="email"
@@ -63,7 +60,7 @@ const LoginForm = () => {
                         onChange={handleChange}
                     />
                     <input
-                        className="form-input"
+                        className="login-form-input"
                         placeholder="******"
                         name="password"
                         type="password"
@@ -72,15 +69,15 @@ const LoginForm = () => {
                         onChange={handleChange}
                     />
                     <button
-                        className="btn btn-block btn-info"
+                        className="btn btn-block btn-info login-submit-btn"
                         style={{ cursor: 'pointer' }}
                         type="submit"
                     >
                         Submit
                     </button>
                 </form>
-                 {/* If an error occurs, show the error message */}
-                 {error &&
+                {/* If an error occurs, show the error message */}
+                {error &&
                     <div id='error-message'>
                         {error.message}
                     </div>

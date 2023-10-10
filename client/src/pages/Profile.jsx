@@ -1,30 +1,29 @@
 import { useQuery } from '@apollo/client'
 import { useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { QUERY_ME } from '../utils/queries'
-// import CreateNewRecipe from './CreateNewRecipe/CreateNewRecipe.jsx'
-
-// import Auth from '../utils/auth';
+import '../styles/profile.css'
+import profile from '../assets/background-Imgs/profile-avatar.png';
 
 const Profile = () => {
-    
+
     const { loading, data } = useQuery(QUERY_ME)
 
-    
+
     const [uploadFile, setUploadFile] = useState('')
     // Upload Image Logic//
-    function handleImageUpload(event){
+    function handleImageUpload(event) {
         //Needs to run each time the page loads//
         const selectedFile = event.target.files[0]
 
-        if(selectedFile){
+        if (selectedFile) {
             const reader = new FileReader();
-            
-            reader.onload = (e) =>{
+
+            reader.onload = (e) => {
                 const fileContent = e.target.result
                 setUploadFile(fileContent)
             }
-            
+
             reader.readAsDataURL(selectedFile)
         }
     }
@@ -34,31 +33,35 @@ const Profile = () => {
             <img src="../assets/spinner.gif" alt="Spinning Loading Symbol" />
         </div>
     }
-    
+
     return (
-        <main>
+        <main id="profile-container">
             <div id="profile">
-                {/* If Image is clicked it will activate the hidden input that allows users to upload image */}
-                <img id='profile-pic' src={uploadFile || '/profile-avatar.png'} width='200px' alt="Generic Profile Image" onClick={()=>{document.getElementById('fileInput').click()}}/>
-                
-                {/* This is the file upload input that will be hidden visually but functional */}
-                <input
-                    type="file"
-                    id="fileInput"
-                    style={{ display: 'none' }}
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                />
-                <button onClick={()=>{document.getElementById('fileInput').click()}}>Upload Image</button>
-                <h1 id="username">{data.me.username}</h1>
+                <div className="profile-avatar">
+                    {/* If Image is clicked it will activate the hidden input that allows users to upload image */}
+                    <img id='profile-pic' src={uploadFile || profile} width='130px' alt="Generic Profile Image" onClick={() => { document.getElementById('fileInput').click() }} />
+                    {/* This is the file upload input that will be hidden visually but functional */}
+                    <input
+                        type="file"
+                        id="fileInput"
+                        style={{ display: 'none' }}
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                    />
+                    <button onClick={() => { document.getElementById('fileInput').click() }}>Upload Image</button>
+                </div>
+                <h1 id="username">Hi, {data.me.username}</h1>
             </div>
             <div id="recipe-section">
-                <div id="create-recipe">
+                <div></div>
+                <div className="recipe-action">
+                    <img src="/icons/savedRecipes.png" />
                     <Link to={`/me/createnewrecipe`}>
                         <h1 className="recipe-header">Create new Recipe</h1>
                     </Link>
                 </div>
-                <div id="saved-recipes">
+                <div className="recipe-action">
+                    <img src="/icons/savedRecipes.png" />
                     <Link to={`/me/myrecipes`}>
                         <h1 className="recipe-header">Saved Recipes</h1>
                     </Link>

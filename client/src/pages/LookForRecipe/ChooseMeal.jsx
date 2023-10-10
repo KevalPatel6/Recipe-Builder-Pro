@@ -6,11 +6,7 @@ import { Link } from 'react-router-dom'
 const ChooseMeal = () => {
     return (
         <div>
-
-            <div className="home-container">
-                <Categories />
-            </div>
-            <Link to="/EnterIngredients"><button className = "enterButton">What's in your kitchen?</button></Link>
+            <Categories />
         </div>
     )
 }

@@ -65,10 +65,17 @@ p {
 }
 
 .enterButton {
-    z-index: 1000;
-    position: absolute;
-    top: 50%;
-    right: 15%;
+    color: white;
+    text-decoration: none;
+}
+
+.enterButton :hover {
+    background-color: rgb(0, 61, 0);
+}
+
+.enterButton button {
+    cursor: pointer;
+    margin-top: 50px;
     display: grid;
     background-color: rgb(0, 92, 0);
     color: white;
@@ -76,8 +83,6 @@ p {
     margin-right: 90px;
     border: none;
     border-radius: 5px;
-    right: 0;
     font-size: 2rem;
     font-weight: 500;
-    
 }

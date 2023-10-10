@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
-
-// import '../../styles/Login.css'
-
 import Auth from '../../utils/auth';
-
+import "./LoginForm.css";
 
 const SignUpForm = () => {
     const [userFormData, setUserFormData] = useState(
@@ -47,10 +44,10 @@ const SignUpForm = () => {
     return (
         <>
             {/* Signup Form */}
-            <div id='form-container'>
-                <form onSubmit={handleFormSubmit}>
+            <div id='submit-container'>
+                <form class="login-form" onSubmit={handleFormSubmit}>
                     <input
-                        className="form-input"
+                        className="login-form-input"
                         placeholder="Enter A Username"
                         name="username"
                         type="text"
@@ -62,7 +59,7 @@ const SignUpForm = () => {
                         title='Your username must be between 3-24 characters and can only contain letters and numbers'
                     />
                     <input
-                        className="form-input"
+                        className="login-form-input"
                         placeholder="Enter an Email"
                         name="email"
                         type="email"
@@ -71,7 +68,7 @@ const SignUpForm = () => {
                         onChange={handleChange}
                     />
                     <input
-                        className="form-input"
+                        className="login-form-input"
                         placeholder="******"
                         name="password"
                         type="password"
@@ -80,7 +77,7 @@ const SignUpForm = () => {
                         onChange={handleChange}
                     />
                     <button
-                        className="btn btn-block btn-info"
+                        className="btn btn-block btn-info login-submit-btn"
                         style={{ cursor: 'pointer' }}
                         type="submit"
                     >
